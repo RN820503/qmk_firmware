@@ -38,6 +38,8 @@
 // Opposite hands rule for HRM. Prevents misfires on same hand rolls.
 #define CHORDAL_HOLD
 
+#define FLOW_TAP_TERM 150
+
 // Default to Mac hotkeys for Select_word
 #define SELECT_WORD_OS_MAC
 
