@@ -26,7 +26,7 @@ enum custom_keycodes {
     ⎋   3   2@  1$   0#  4           7   6   5   9   8  Vol
     ⇥   v   w   g2   m   j           =_  .:  '2  -+  /  Vol
     z   s⌃  n⌥  t3   h⌘  k           ,;  a⌘  e1  i⌥  c⌃ q
-    num f   p   d    l   x      	 `   u   o   y   b
+    `   f   p   d    l   x      	 `   u   o   y   b  \
                          r⇧  ⌫   ⏎   ␣⇧
   */
 
@@ -110,8 +110,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ⎋   3   2@  1$   0#  4           7   6   5   9   8  Vol
     ⇥   v   w   g2   m   j           =_  .:  '2  -+  /  Vol
     z   s⌃  n⌥  t3   h⌘  k           ,;  a⌘  e1  i⌥  c⌃ q
-    tg  f   p   d    l   x      	 `   u   o   y   b  fun
-                         r⇧   ⌫   ⏎   ␣⇧
+    `   f   p   d    l   x      	 ;   u   o   y   b  \
+                         r⇧  ⌫   ⏎   ␣⇧
   */
   [_DEF] = LAYOUT_voyager(
     LN5, LN4, LN3, LN2, LN1, LN0,           RN0, RN1, RN2, RN3, RN4, RN5,
@@ -125,7 +125,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		⇥	+	=	*
     ⇥   -   5   2   3   :
     lk  7   .   1   0   4       	,   ⌘  (mo)  ⌥	 ⌃
-        /   6   9   8   ,       	`
+        /   6   9   8   ,
     	                ␣   ⌫   ⏎   ␣⇧
   */
   [_NUM] = LAYOUT_voyager(
@@ -167,7 +167,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   /*
     	                        Sclp  Scap                     vol+    home    up	end
-    	⌃      ⌥       (mo)     ⌘     SelAll       		       vol-    left    dn	rght	del  lck
+    	⌃      ⌥       (mo)     ⌘     SelAll       		       vol-    left    dn	rght	del  lk
     	undo   cpy             pst    redo                     mute    ←wrd    wrd→ ←line→  rgb
                                         ⇧                      dsk-    dsk+
   */
@@ -185,17 +185,17 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
 	    case LH1:
         case RH1:
-            return TAPPING_TERM - 50;
+            return TAPPING_TERM - 25;
 
-    	// case LM4:
-        // case LM3:
-        // case LM2:
-        // case LM1:
-        // case RM1:
-        // case RM2:
-        // case RM3:
-        // case RM4:
-        //     return TAPPING_TERM + 75;
+    	case LM4:
+        case LM3:
+        case LM2:
+        case LM1:
+        case RM1:
+        case RM2:
+        case RM3:
+        case RM4:
+            return TAPPING_TERM + 75;
 
         default:
             return TAPPING_TERM;
@@ -269,8 +269,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 };
 
 const custom_shift_key_t custom_shift_keys[] = {
-    {KC_1, KC_DLR},     // Shift 1 is $
-    {KC_0, KC_HASH},    // Shift 0 is #
     {KC_EQL, KC_UNDS},  // Shift = is _
     {KC_DOT, KC_COLN},  // Shift . is :
     {KC_MINS, KC_PLUS}, // Shift - is +

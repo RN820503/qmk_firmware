@@ -25,7 +25,7 @@
 
 // Configure the global tapping term (default: 200ms)
 #undef TAPPING_TERM // if not default
-#define TAPPING_TERM 225
+#define TAPPING_TERM 175
 #define TAPPING_TERM_PER_KEY  // reduce for HRM Shifts
 
 // Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
