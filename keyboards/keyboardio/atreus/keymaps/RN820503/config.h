@@ -57,7 +57,7 @@
 
 // Configure the global tapping term (default: 200ms)
 #undef TAPPING_TERM // if not default
-#define TAPPING_TERM 225
+#define TAPPING_TERM 175
 #define TAPPING_TERM_PER_KEY  // reduce for HRM Shifts
 
 // Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
@@ -65,6 +65,10 @@
 
 // Apply the modifier on keys that are tapped during a short hold of a modtap
 #define PERMISSIVE_HOLD
+
+// Flow Tap modifies mod-tap MT and layer-tap LT keys such that when pressed within a short timeout
+// of the preceding key, the tapping behavior is triggered.
+#define FLOW_TAP_TERM 150
 
 // Opposite hands rule for HRMs
 #define CHORDAL_HOLD

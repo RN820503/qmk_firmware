@@ -1,7 +1,6 @@
 {
     "modules": [
         "getreuer/custom_shift_keys",
-        "getreuer/select_word",
-        "getreuer/tap_flow"
+        "getreuer/select_word"
     ]
 }
