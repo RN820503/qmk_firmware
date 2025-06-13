@@ -8,6 +8,7 @@ enum layer_names {
     _NUM,
     _SYM,
     _NAV,
+    _GAM,
 };
 
 enum custom_keycodes {
@@ -88,7 +89,7 @@ enum custom_keycodes {
 #define RB2 KC_O
 #define RB3 KC_Y
 #define RB4 KC_B
-#define RB5 KC_BSLS
+#define RB5 TG(_GAM)
 
 // thumb row
 #define LH1 LSFT_T(KC_R)
@@ -177,6 +178,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ___x___, KC_LCTL, KC_LALT, _______, KC_LGUI,       G(KC_A),                        KC_VOLD, KC_LEFT,    KC_DOWN, KC_RGHT,    KC_DEL,  QK_LLCK,
     ___x___, G(KC_Z), G(KC_C), G(KC_X), G(KC_V),       LSG(KC_Z),                      KC_MUTE, SELWBAK,    SELWORD, SELLINE,    LUMINO,  _______,
                                                        KC_LSFT,   _______, C(KC_LEFT), C(KC_RGHT)
+  ),
+
+  /*	Game
+		3	2	1	0   4
+    ⇥   ⇥   q   ↑   e   r
+        ⇧   ←   ↓   →   f       	,   ⌘  (mo)  ⌥	 ⌃
+        ⌃   z   c   v                                tg
+    	                ␣   ⌥   ⏎   ␣⇧
+  */
+  [_GAM] = LAYOUT_voyager(
+    _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______,
+    _______, KC_TAB,  KC_Q,    KC_UP,   KC_E,    KC_R,                      _______, _______, _______, _______, _______, _______,
+    _______, KC_LSFT, KC_LEFT, KC_DOWN, KC_RGHT, KC_F,                      _______, KC_RGUI, _______, KC_RALT, KC_RCTL, _______,
+    _______, KC_LCTL, KC_Z,    KC_C,    KC_V,    _______,                   _______, ___x___, ___x___, ___x___, ___x___, _______,
+                                                 KC_SPC,  KC_LALT, _______, _______
   ),
 
 };
