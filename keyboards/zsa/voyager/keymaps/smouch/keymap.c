@@ -185,14 +185,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ⇥   ⇥   q   ↑   e   r
         ⇧   ←   ↓   →   f       	,   ⌘  (mo)  ⌥	 ⌃
         ⌃   z   c   v                                tg
-    	                ␣   ⌥   ⏎   ␣⇧
+    	                ␣   ⌃   ⏎   ␣⇧
   */
   [_GAM] = LAYOUT_voyager(
     _______, _______, _______, _______, _______, _______,                      _______, _______, _______, _______, _______, _______,
     _______, KC_TAB,  KC_Q,    KC_UP,   KC_E,    KC_R,                         _______, _______, _______, _______, _______, _______,
     _______, KC_LSFT, KC_LEFT, KC_DOWN, KC_RGHT, KC_F,                         _______, KC_RGUI, _______, KC_RALT, KC_RCTL, _______,
     _______, KC_LCTL, KC_Z,    KC_C,    KC_V,    _______,                      _______, ___x___, ___x___, ___x___, ___x___, _______,
-                                                 KC_SPC,  KC_LALT, C(KC_LEFT), C(KC_RGHT)
+                                                 KC_SPC,  KC_LCTL, C(KC_LEFT), C(KC_RGHT)
   ),
 
 };
@@ -223,9 +223,9 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
     LAYOUT(
         '*', '*', '*', '*', '*', '*',            '*', '*', '*', '*', '*', '*',
         '*', 'L', 'L', 'L', 'L', 'L',            'R', 'R', 'R', 'R', 'R', '*',
-        'L', 'L', 'L', 'L', 'L', 'L',            'R', 'R', 'R', 'R', 'R', 'R',
-        '*', 'L', 'L', 'L', 'L', 'L',            'R', 'R', 'R', 'R', 'R', '*',
-                                 '*', '*',  '*', '*'
+        'L', '*', 'L', 'L', 'L', 'L',            'R', 'R', 'R', 'R', 'R', 'R',
+        '*', '*', 'L', 'L', 'L', 'L',            'R', 'R', 'R', 'R', 'R', '*',
+                                 '*', '*',  '*', 'R'
     );
 
 // program custom keycode functions
