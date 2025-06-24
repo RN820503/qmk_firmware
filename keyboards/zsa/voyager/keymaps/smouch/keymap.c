@@ -33,11 +33,11 @@ enum custom_keycodes {
 
 // Num row
 #define LN5 KC_ESC
-#define LN4 KC_3
-#define LN3 KC_2
-#define LN2 KC_1
+#define LN4 LT(0, KC_3)
+#define LN3 LT(0, KC_2)
+#define LN2 LT(0, KC_1)
 #define LN1 KC_0
-#define LN0 KC_4
+#define LN0 LT(0, KC_4)
 
 #define RN0 KC_7
 #define RN1 KC_6
@@ -181,18 +181,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   /*	Game
-		3	2	1	0   4
+	⎋	3	2	1	F1  4
     ⇥   ⇥   q   ↑   e   r
-        ⇧   ←   ↓   →   f       	,   ⌘  (mo)  ⌥	 ⌃
-        ⌃   z   c   v                                tg
+    F3  ⇧   ←   ↓   →   f       	,   ⌘  (mo)  ⌥	 ⌃
+    F4  ⌃   z   c   v   F2                           tg
     	                ␣   ⌃   ⏎   ␣⇧
   */
   [_GAM] = LAYOUT_voyager(
-    _______, _______, _______, _______, _______, _______,                      _______, _______, _______, _______, _______, _______,
-    _______, KC_TAB,  KC_Q,    KC_UP,   KC_E,    KC_R,                         _______, _______, _______, _______, _______, _______,
-    _______, KC_LSFT, KC_LEFT, KC_DOWN, KC_RGHT, KC_F,                         _______, KC_RGUI, _______, KC_RALT, KC_RCTL, _______,
-    _______, KC_LCTL, KC_Z,    KC_C,    KC_V,    _______,                      _______, ___x___, ___x___, ___x___, ___x___, _______,
-                                                 KC_SPC,  KC_LCTL, C(KC_LEFT), C(KC_RGHT)
+    _______, _______, _______, _______, KC_F1, _______,                      _______, _______, _______, _______, _______, _______,
+    _______, KC_TAB,  KC_Q,    KC_W,    KC_E,  KC_R,                         _______, _______, _______, _______, _______, _______,
+    KC_F3,   KC_LSFT, KC_A,    KC_S,    KC_D,  KC_F,                         _______, KC_RGUI, _______, KC_RALT, KC_RCTL, _______,
+    KC_F4,   KC_LCTL, KC_Z,    KC_C,    KC_V,  KC_F2,                        _______, ___x___, ___x___, ___x___, ___x___, _______,
+                                               KC_SPC,  KC_LCTL, C(KC_LEFT), C(KC_RGHT)
   ),
 
 };
@@ -223,7 +223,7 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
     LAYOUT(
         '*', '*', '*', '*', '*', '*',            '*', '*', '*', '*', '*', '*',
         '*', 'L', 'L', 'L', 'L', 'L',            'R', 'R', 'R', 'R', 'R', '*',
-        'L', '*', 'L', 'L', 'L', 'L',            'R', 'R', 'R', 'R', 'R', 'R',
+        '*', '*', 'L', 'L', 'L', 'L',            'R', 'R', 'R', 'R', 'R', 'R',
         '*', '*', 'L', 'L', 'L', 'L',            'R', 'R', 'R', 'R', 'R', '*',
                                  '*', '*',  '*', 'R'
     );
