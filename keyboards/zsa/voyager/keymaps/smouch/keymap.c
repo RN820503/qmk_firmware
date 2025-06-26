@@ -33,11 +33,11 @@ enum custom_keycodes {
 
 // Num row
 #define LN5 KC_ESC
-#define LN4 LT(0, KC_3)
-#define LN3 LT(0, KC_2)
-#define LN2 LT(0, KC_1)
+#define LN4 KC_3
+#define LN3 KC_2
+#define LN2 KC_1
 #define LN1 KC_0
-#define LN0 LT(0, KC_4)
+#define LN0 KC_4
 
 #define RN0 KC_7
 #define RN1 KC_6
