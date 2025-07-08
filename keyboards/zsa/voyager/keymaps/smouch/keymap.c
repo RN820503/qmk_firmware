@@ -181,18 +181,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   /*	Game
-	⎋	3	2	1	F3  4
-    ⇥   ⇥   q   ↑   e   r
-    F1  ⇧   ←   ↓   →   f       	,   ⌘  (mo)  ⌥	 ⌃
-    F4  ⌃   z   c   v   F2                           tg
-    	                ␣   ⌃   ⏎   ␣⇧
+	⎋	3	2	1	3   4
+    ⇥   ⇥   q   w   e   r
+    z   ⇧   s   a   d   f       	,   ⌘  (mo)  ⌥	 ⌃
+    v   ⌃   F2  F1  F3  F4                           tg
+    	                ␣   c   ⏎   ␣⇧
   */
   [_GAM] = LAYOUT_voyager(
-    _______, _______, _______, _______, KC_F3, _______,                      _______, _______, _______, _______, _______, _______,
-    _______, KC_TAB,  KC_Q,    KC_W,    KC_E,  KC_R,                         _______, _______, _______, _______, _______, _______,
-    KC_F1,   KC_LSFT, KC_A,    KC_S,    KC_D,  KC_F,                         _______, KC_RGUI, _______, KC_RALT, KC_RCTL, _______,
-    KC_F4,   KC_LCTL, KC_Z,    KC_C,    KC_V,  KC_F2,                        _______, ___x___, ___x___, ___x___, ___x___, _______,
-                                               KC_SPC,  KC_LCTL, C(KC_LEFT), C(KC_RGHT)
+    _______, _______, KC_2,  KC_1,  KC_3,  KC_4,                         _______, _______, _______, _______, _______, _______,
+    _______, KC_TAB,  KC_Q,  KC_W,  KC_E,  KC_R,                         _______, _______, _______, _______, _______, _______,
+    KC_Z,    KC_LSFT, KC_A,  KC_S,  KC_D,  KC_F,                         _______, KC_RGUI, _______, KC_RALT, KC_RCTL, _______,
+    KC_V,    KC_LCTL, KC_F2, KC_F1, KC_F3, KC_F4,                        _______, ___x___, ___x___, ___x___, ___x___, _______,
+                                               KC_SPC, KC_C, C(KC_LEFT), C(KC_RGHT)
   ),
 
 };
