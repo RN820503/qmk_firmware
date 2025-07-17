@@ -35,7 +35,7 @@ enum custom_keycodes {
 // Num row
 #define LN5 KC_GRV
 #define LN4 KC_NO
-#define LN3 G(KC_X)
+#define LN3 G(KC_V)
 #define LN2 G(KC_A)
 #define LN1 G(KC_C)
 #define LN0 KC_NO
