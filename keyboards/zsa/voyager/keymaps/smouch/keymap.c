@@ -28,7 +28,7 @@ enum custom_keycodes {
     `      cut all  cpy              ⌘←  ←   →   ⌘→  ⌘⇥ mply
     ⇥   v   w   g2   m   j           =_  .:  '2  -+  /  ⎋
     z   s⌃  n⌥  t3   h⌘  k           ,;  a⌘  e1  i⌥  c⌃ q
-    tg  f   p   d    l   x      	 ;   u   o   y   b  tg
+    tg  f   p   d    l   x      	 ;   u   o   y4  b  tg
                          r⇧  ⌫   ⏎   ␣⇧
 */
 
