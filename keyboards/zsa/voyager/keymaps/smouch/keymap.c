@@ -8,7 +8,6 @@ enum layer_names {
     NUM,
     SYM,
     NAV,
-    WIN,
     GAM,
 };
 
@@ -24,28 +23,28 @@ enum custom_keycodes {
                     LH1 LH0     RH0 RH1
 */
 
-/*  Hands Down Promethium (canonical)
-    `      cut all  cpy              ⌘←  ←   →   ⌘→  ⌘⇥ mply
-    ⇥   v   w   g2   m   j           =_  .:  '2  -+  /  ⎋
+/*  Hands Down Promethium
+    ⎋   3   2   1    0   4           7   6   5   9   8  vol↑
+    ⇥   v   w   g2   m   j           =_  .:  '2  -+  /  vol↓
     z   s⌃  n⌥  t3   h⌘  k           ,;  a⌘  e1  i⌥  c⌃ q
-    tg  f   p   d    l   x      	 ;   u   o   y4  b  tg
+    tg  f   p   d    l   x      	 `   u   o   y4  b  tg
                          r⇧  ⌫   ⏎   ␣⇧
 */
 
 // Num row
-#define LN5 KC_GRV
-#define LN4 KC_NO
-#define LN3 G(KC_V)
-#define LN2 G(KC_A)
-#define LN1 G(KC_C)
-#define LN0 KC_NO
+#define LN5 KC_ESC
+#define LN4 KC_3
+#define LN3 KC_2
+#define LN2 KC_1
+#define LN1 KC_0
+#define LN0 KC_4
 
-#define RN0 G(KC_LEFT)
-#define RN1 KC_LEFT
-#define RN2 KC_RGHT
-#define RN3 G(KC_RGHT)
-#define RN4 G(KC_TAB)
-#define RN5 KC_MPLY
+#define RN0 KC_7
+#define RN1 KC_6
+#define RN2 KC_5
+#define RN3 KC_9
+#define RN4 KC_8
+#define RN5 KC_VOLU
 
 // top row
 #define LT5 KC_TAB
@@ -60,7 +59,7 @@ enum custom_keycodes {
 #define RT2 LT(SYM, KC_QUOT)
 #define RT3 KC_MINS
 #define RT4 KC_SLSH
-#define RT5 KC_ESC
+#define RT5 KC_VOLD
 
 // middle row
 #define LM5 KC_Z
@@ -85,10 +84,10 @@ enum custom_keycodes {
 #define LB1 KC_L
 #define LB0 KC_X
 
-#define RB0 KC_SCLN
+#define RB0 KC_GRV
 #define RB1 KC_U
 #define RB2 KC_O
-#define RB3 LT(WIN, KC_Y)
+#define RB3 KC_Y
 #define RB4 KC_B
 #define RB5 TG(GAM)
 
@@ -108,11 +107,12 @@ static uint16_t keyhold_timer; // for handling Qu combo
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-  /*  Hands Down Promethium (canonical)
-    `      cut all  cpy              ⌘←  ←   →   ⌘→  ⌘⇥ mply
-    ⇥   v   w   g2   m   j           =_  .:  '2  -+  /  ⎋
+
+  /*  Hands Down Promethium
+    ⎋   3   2   1    0   4           7   6   5   9   8  vol↑
+    ⇥   v   w   g2   m   j           =_  .:  '2  -+  /  vol↓
     z   s⌃  n⌥  t3   h⌘  k           ,;  a⌘  e1  i⌥  c⌃ q
-    tg  f   p   d    l   x      	 ;   u   o   y   b  tg
+    tg  f   p   d    l   x      	 `   u   o   y4  b  tg
                          r⇧  ⌫   ⏎   ␣⇧
 */
   [DEF] = LAYOUT_voyager(
@@ -176,9 +176,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [NAV] = LAYOUT_voyager(
     _______, _______, _______, _______, _______,       _______,                   _______, _______,    _______, _______,    _______, _______,
     _______, ___x___, ___x___, _______, C(S(G(KC_4))), ___x___,                   KC_PGUP, G(KC_LEFT), KC_UP,   G(KC_RGHT), ___x___, _______,
-    ___x___, KC_LCTL, KC_LALT, _______, KC_LGUI,       ___x___,                   KC_PGDN, KC_LEFT,    KC_DOWN, KC_RGHT,    KC_DEL,  _______,
+    ___x___, KC_LCTL, KC_LALT, _______, KC_LGUI,       ___x___,                   KC_PGDN, KC_LEFT,    KC_DOWN, KC_RGHT,    KC_DEL,  QK_LLCK,
     ___x___, ___x___, ___x___, ___x___, LSG(KC_4),     ___x___,                   G(KC_Z), SELWBAK,    SELWORD, SELLINE,    LUMINO,  _______,
-                                                       KC_LSFT, _______, _______, QK_LLCK
+                                                       KC_LSFT, _______, C(KC_LEFT), C(KC_RGHT)
   ),
 
   /*	Windows Management
@@ -187,7 +187,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                      dsk← dsk→          	⌘  ⇧  ⌥	 ⌃
                                                  (mo)
     	                        mply    lk
-  */
+  *
   [WIN] = LAYOUT_voyager(
     ___x___, ___x___, ___x___, ___x___,    ___x___,    ___x___,                   _______, _______, _______, _______, _______, _______,
     ___x___, ___x___, KC_MUTE, KC_VOLD,    KC_VOLU,    ___x___,                   ___x___, ___x___, ___x___, ___x___, ___x___, _______,
@@ -195,6 +195,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ___x___, ___x___, ___x___, ___x___,    ___x___,    ___x___,                   ___x___, ___x___, ___x___, _______, ___x___, ___x___,
                                                        KC_MPLY, ___x___, ___x___, QK_LLCK
   ),
+  */
 
   /*	Game
 	⎋	3	2	1	3   4
