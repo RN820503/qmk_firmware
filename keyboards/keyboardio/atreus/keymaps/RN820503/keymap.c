@@ -154,16 +154,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     */
 
     /*
-                               Sclp  Scap                     vol+    home    up	end
-    	⌃       ⌥       (mo)   ⌘     Sall        		      vol-    left    dn	rght    ⌦
-    	undo   copy     cut    pst   redo                     mute    ←Sel    Sel→  ←line→
-                                                              dsk-    dsk+
+                               Sclp                       vol+    home    up	end
+    	⌃       ⌥       (mo)   ⌘             		      vol-    left    dn	rght    ⌦
+    	                       Scap                       mute    ←Sel    Sel→  ←line→
+                                                          dsk-    dsk+
     */
     [_NAV] = LAYOUT(
-    ___x___, ___x___, _______, C(S(G(KC_4))), LSG(KC_4),                   KC_VOLU,    G(KC_LEFT), KC_UP,   G(KC_RGHT), ___x___,
-    KC_LCTL, KC_LALT, _______, KC_LGUI,       G(KC_A),                     KC_VOLD,    KC_LEFT,    KC_DOWN, KC_RGHT,    KC_DEL,
-    G(KC_Z), G(KC_C), G(KC_X), G(KC_V),       LSG(KC_Z), _______, _______, KC_MUTE,    SELWBAK,    SELWORD, SELLINE,    ___x___,
-    _______, _______, _______, _______,       _______,   _______, _______, C(KC_LEFT), C(KC_RGHT), _______, _______,    _______
+    ___x___, ___x___, _______, C(S(G(KC_4))), ___x___,                   KC_VOLU,    G(KC_LEFT), KC_UP,   G(KC_RGHT), ___x___,
+    KC_LCTL, KC_LALT, _______, KC_LGUI,       ___x___,                   KC_VOLD,    KC_LEFT,    KC_DOWN, KC_RGHT,    KC_DEL,
+    ___x___, ___x___, ___x___, LSG(KC_4),     ___x___, _______, _______, KC_MUTE,    SELWBAK,    SELWORD, SELLINE,    ___x___,
+    _______, _______, _______, _______,       _______, _______, _______, C(KC_LEFT), C(KC_RGHT), _______, _______,    _______
     ),
 
 };
