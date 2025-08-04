@@ -125,16 +125,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
  /*	BEAKL-19 Numpad
 		⇥	+	=	*
-    ⇥   -   5   2   3   /
+    ⇥   -   5   2   3   :
         7   .   1   0   4       	,   ⌘  (mo)  ⌥	 ⌃
-        :   6   9   8   ,
+        /   6   9   8   ,
     	                ␣   ⌫   ⏎   lk
   */
   [NUM] = LAYOUT_voyager(
     _______, KC_TAB,  KC_PLUS, KC_EQL, KC_ASTR,  ___x___,                   _______, _______, _______, _______, _______, _______,
-    _______, KC_MINS, KC_5,    KC_2,    KC_3,    KC_SLSH,                   _______, _______, _______, _______, _______, _______,
+    _______, KC_MINS, KC_5,    KC_2,    KC_3,    KC_COLN,                   _______, _______, _______, _______, _______, _______,
     _______, KC_7,    KC_DOT,  KC_1,    KC_0,    KC_4,                      _______, KC_RGUI, _______, KC_RALT, KC_RCTL, _______,
-    _______, KC_COLN, KC_6,    KC_9,    KC_8,    KC_COMM,                   _______, ___x___, ___x___, ___x___, ___x___, _______,
+    _______, KC_SLSH, KC_6,    KC_9,    KC_8,    KC_COMM,                   _______, ___x___, ___x___, ___x___, ___x___, _______,
                                                  KC_SPC,  _______, _______, QK_LLCK
   ),
 
