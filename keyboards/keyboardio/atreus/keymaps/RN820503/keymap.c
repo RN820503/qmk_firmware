@@ -126,32 +126,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, KC_PLUS, KC_EQL,  KC_ASTR, KC_SPC,  _______, _______, _______, _______, _______, _______, _______
     ),
 
-    /* Getreur Symbols
-    *
-    *	`	<   >	-	|		    ^  	{   }   $   \
-    *   !   *   /   =   &          	#   (   )   ;   "
-    *   ~   +   [	]   %		    @ 	:   ,   .	'
-    */
-    [_SYM] = LAYOUT(
-    KC_GRV,  KC_LABK, KC_RABK, KC_MINS, KC_PIPE,                   KC_CIRC, KC_LCBR, KC_RCBR, KC_DLR,  KC_BSLS,
-    KC_EXLM, KC_ASTR, KC_SLSH, KC_EQL,  KC_AMPR,                   KC_HASH, KC_LPRN, KC_RPRN, KC_SCLN, KC_DQT,
-	KC_TILD, KC_PLUS, KC_LBRC, KC_RBRC, KC_PERC, _______, _______, KC_AT,   KC_COLN, KC_COMM, KC_DOT,  KC_QUOT,
-    _______, _______, _______, _______, KC_SPC,  _______, _______, _______, _______, _______, _______, _______
-    ),
-
-    /*  BEAKL-19 symbols
-    *       <   =   >   @   	^	[	_   ]
+    /*  BEAKL-27 symbols
+    *       <   =   >   #   	@	[	_   ]
     *   \   (   -   )   +       %   {   ;   }	!
-    *       *   :   /   #		$	&	~	|
+    *       *   :   /   $		^	&	~	|
     *                   ␣
-    *
+    */
     [_SYM] = LAYOUT(
-    ___x___, KC_LABK, KC_EQL,  KC_RABK, KC_AT,                     KC_CIRC, KC_LBRC, KC_UNDS, KC_RBRC, ___x___,
+    ___x___, KC_LABK, KC_EQL,  KC_RABK, KC_HASH,                   KC_AT,   KC_LBRC, KC_UNDS, KC_RBRC, ___x___,
     KC_BSLS, KC_LPRN, KC_MINS, KC_RPRN, KC_PLUS,                   KC_PERC, KC_LCBR, KC_SCLN, KC_RCBR, KC_EXLM,
-	___x___, KC_ASTR, KC_COLN, KC_SLSH, KC_HASH, _______, _______, KC_DLR,  KC_AMPR, KC_TILD, KC_PIPE, ___x___,
+	___x___, KC_ASTR, KC_COLN, KC_SLSH, KC_DLR,  _______, _______, KC_CIRC, KC_AMPR, KC_TILD, KC_PIPE, ___x___,
     _______, _______, _______, _______, KC_SPC,  _______, _______, _______, _______, _______, _______, _______
     ),
-    */
 
     /*
                                Sclp                       vol+    home    up	end

@@ -140,17 +140,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                  KC_SPC,  _______, _______, QK_LLCK
   ),
 
-  /* BEAKL-19 Symbols
+  /* BEAKL-27 Symbols
     *
-    *       <   =   >   #           ^   [   _   ]
+    *       <   =   >   #           @   [   _   ]
     *   \   (   -   )   +          	%   {   ;   }   !
-    *       *   :	/   $    		@ 	&   ~   |
+    *       *   :	/   $    		^ 	&   ~   |
   */
   [SYM] = LAYOUT_voyager(
     _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______,
-    _______, ___x___, KC_LABK, KC_EQL,  KC_RABK, KC_HASH,                   KC_CIRC, KC_LBRC, KC_UNDS, KC_RBRC, ___x___, _______,
+    _______, ___x___, KC_LABK, KC_EQL,  KC_RABK, KC_HASH,                   KC_AT,   KC_LBRC, KC_UNDS, KC_RBRC, ___x___, _______,
     _______, KC_BSLS, KC_LPRN, KC_MINS, KC_RPRN, KC_PLUS,                   KC_PERC, KC_LCBR, KC_SCLN, KC_RCBR, KC_EXLM, _______,
-    _______, ___x___, KC_ASTR, KC_COLN, KC_SLSH, KC_DLR,                    KC_AT,   KC_AMPR, KC_TILD, KC_PIPE, ___x___, _______,
+    _______, ___x___, KC_ASTR, KC_COLN, KC_SLSH, KC_DLR,                    KC_CIRC, KC_AMPR, KC_TILD, KC_PIPE, ___x___, _______,
                                                  KC_SPC,  _______, _______, _______
   ),
 
@@ -211,9 +211,9 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
     LAYOUT(
         '*', '*', '*', '*', '*', '*',            '*', '*', '*', '*', '*', '*',
         '*', 'L', 'L', 'L', 'L', 'L',            'R', 'R', 'R', 'R', 'R', '*',
-        '*', '*', 'L', 'L', 'L', 'L',            'R', 'R', 'R', 'R', 'R', 'R',
-        '*', '*', 'L', 'L', 'L', 'L',            'R', 'R', 'R', 'R', 'R', '*',
-                                 '*', '*',  '*', 'R'
+        'L', 'L', 'L', 'L', 'L', 'L',            'R', 'R', 'R', 'R', 'R', 'R',
+        '*', 'L', 'L', 'L', 'L', 'L',            'R', 'R', 'R', 'R', 'R', '*',
+                                 '*', '*',  '*', '*'
     );
 
 // program custom keycode functions
