@@ -100,6 +100,8 @@ enum custom_keycodes {
 
 #define ___x___ KC_NO  // visual aid to null keys
 
+
+
 #include "g/keymap_combo.h"
 
 uint8_t  saved_mods = 0;
@@ -138,34 +140,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                  KC_SPC,  _______, _______, QK_LLCK
   ),
 
-  /* Getreuer Symbols
+  /* BEAKL-19 Symbols
     *
-    *	`	<   >	-	|		    ^  	{   }   $
-    *   !   *   /   =   &          	#   (   )   ;   "
-    *   ~   +   [	]   %		    @ 	:   ,   .	'
+    *       <   =   >   #           ^   [   _   ]
+    *   \   (   -   )   +          	%   {   ;   }   !
+    *       *   :	/   $    		@ 	&   ~   |
   */
   [SYM] = LAYOUT_voyager(
     _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______,
-    _______, KC_GRV , KC_LABK, KC_RABK, KC_MINS, KC_PIPE,                   KC_CIRC, KC_LCBR, KC_RCBR, KC_DLR , KC_BSLS, _______,
-    QK_LLCK, KC_EXLM, KC_ASTR, KC_SLSH, KC_EQL , KC_AMPR,                   KC_HASH, KC_LPRN, KC_RPRN, KC_SCLN, KC_DQUO, QK_LLCK,
-    _______, KC_TILD, KC_PLUS, KC_LBRC, KC_RBRC, KC_PERC,                   KC_AT  , KC_COLN, KC_COMM, KC_DOT , KC_QUOT, _______,
-                                                 KC_SPC , _______, _______, _______
-  ),
-
-  /* BEAKL-19 Symbols
-    *       @   $   #                       ^
-    *       <   =   >                   [   _   ]
-    *   \   (   -   )   +          	%   {   ;   }   !
-    *       *   :	/       		` 	&   ~   |
-  *
-  [_SYM] = LAYOUT_voyager(
-    _______, _______, KC_AT,   KC_DLR,  KC_HASH, _______,                   _______, _______, KC_CIRC, _______, _______, _______,
-    _______, ___x___, KC_LABK, KC_EQL,  KC_RABK, ___x___,                   ___x___, KC_LBRC, KC_UNDS, KC_RBRC, ___x___, _______,
+    _______, ___x___, KC_LABK, KC_EQL,  KC_RABK, KC_HASH,                   KC_CIRC, KC_LBRC, KC_UNDS, KC_RBRC, ___x___, _______,
     _______, KC_BSLS, KC_LPRN, KC_MINS, KC_RPRN, KC_PLUS,                   KC_PERC, KC_LCBR, KC_SCLN, KC_RCBR, KC_EXLM, _______,
-    _______, ___x___, KC_ASTR, KC_COLN, KC_SLSH, ___x___,                   _______, KC_AMPR, KC_TILD, KC_PIPE, ___x___, _______,
+    _______, ___x___, KC_ASTR, KC_COLN, KC_SLSH, KC_DLR,                    KC_AT,   KC_AMPR, KC_TILD, KC_PIPE, ___x___, _______,
                                                  KC_SPC,  _______, _______, _______
   ),
-  */
 
   /*
     	                        Sclp                       Pgup    home    up	end
@@ -180,22 +167,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ___x___, ___x___, ___x___, ___x___, LSG(KC_4),     ___x___,                   G(KC_Z), SELWBAK,    SELWORD, SELLINE,    LUMINO,  _______,
                                                        KC_LSFT, _______, C(KC_LEFT), C(KC_RGHT)
   ),
-
-  /*	Windows Management
-
-                mute vol↓ vol↑
-                     dsk← dsk→          	⌘  ⇧  ⌥	 ⌃
-                                                 (mo)
-    	                        mply    lk
-  *
-  [WIN] = LAYOUT_voyager(
-    ___x___, ___x___, ___x___, ___x___,    ___x___,    ___x___,                   _______, _______, _______, _______, _______, _______,
-    ___x___, ___x___, KC_MUTE, KC_VOLD,    KC_VOLU,    ___x___,                   ___x___, ___x___, ___x___, ___x___, ___x___, _______,
-    ___x___, ___x___, ___x___, C(KC_LEFT), C(KC_RGHT), ___x___,                   ___x___, KC_RGUI, KC_RSFT, KC_RALT, KC_RCTL, ___x___,
-    ___x___, ___x___, ___x___, ___x___,    ___x___,    ___x___,                   ___x___, ___x___, ___x___, _______, ___x___, ___x___,
-                                                       KC_MPLY, ___x___, ___x___, QK_LLCK
-  ),
-  */
 
   /*	Game
 	⎋	3	2	1	3   4
