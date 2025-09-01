@@ -3,9 +3,9 @@
 // this is the style you want to emulate.
 // This is the canonical layout file for the Quantum project. If you want to add another keyboard,
 
-#include "keycodes.h"
-#include "keymap_us.h"
-#include "quantum_keycodes.h"
+//#include "keycodes.h"
+//#include "keymap_us.h"
+//#include "quantum_keycodes.h"
 #include QMK_KEYBOARD_H
 
 enum layer_names {
