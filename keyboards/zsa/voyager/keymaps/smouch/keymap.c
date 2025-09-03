@@ -12,7 +12,7 @@ enum layer_names {
 };
 
 enum custom_keycodes {
-    SS_Qu = SAFE_RANGE,
+    SS_Qu = SAFE_RANGE,r
 };
 
 /*  KEY POSITION Names
