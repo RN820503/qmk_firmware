@@ -1,6 +1,6 @@
 
-#include "keycodes.h"
-#include "keymap_us.h"
+// #include "keycodes.h"
+// #include "keymap_us.h"
 #include QMK_KEYBOARD_H
 
 enum layer_names {
