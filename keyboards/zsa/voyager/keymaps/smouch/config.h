@@ -41,10 +41,10 @@
 #define FLOW_TAP_TERM 150
 
 // Default to Mac hotkeys for Select_word
-// #define SELECT_WORD_OS_MAC
+#define SELECT_WORD_OS_MAC
 
 // Don't apply custom shift keys with mods other than Shift.
-// #define CUSTOM_SHIFT_KEYS_NEGMODS ~MOD_MASK_SHIFT
+#define CUSTOM_SHIFT_KEYS_NEGMODS ~MOD_MASK_SHIFT
 
 // Tell Lumino to never write the Brightness level to EEPROM
 // #define LUMINO_NO_EEPROM

@@ -1,5 +1,5 @@
 
-# VPATH += keyboards/gboards/ # using gboards combo code: see https://combos.gboards.ca/
+VPATH += keyboards/gboards/ # using gboards combo code: see https://combos.gboards.ca/
 
 EXTRAKEY_ENABLE = yes       # Audio control and System control
 LTO_ENABLE = yes			# link time optimisation
@@ -9,7 +9,7 @@ CAPS_WORD_ENABLE = yes
 COMBO_ENABLE = yes
 LAYER_LOCK_ENABLE = yes
 
-KEY_OVERRIDE_ENABLE = yes	# Disable for Custom_Shift_Keys module
+KEY_OVERRIDE_ENABLE = no	# Disable for Custom_Shift_Keys module
 
 AUTO_SHIFT_ENABLE = no
 MOUSEKEY_ENABLE = no       	# Mouse keys
