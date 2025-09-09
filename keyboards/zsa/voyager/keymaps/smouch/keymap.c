@@ -285,6 +285,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 };
 
 const custom_shift_key_t custom_shift_keys[] = {
+    {KC_2, KC_AT},      // Shift 2 is @
+    {KC_1, KC_DLR},     // Shift 1 is $
+    {KC_0, KC_AT},      // Shift 0 is #
     {KC_EQL, KC_UNDS},  // Shift = is _
     {KC_DOT, KC_COLN},  // Shift . is :
     {KC_MINS, KC_PLUS}, // Shift - is +
