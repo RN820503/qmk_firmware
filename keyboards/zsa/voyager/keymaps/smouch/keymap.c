@@ -22,10 +22,10 @@ enum custom_keycodes {
 */
 
 /*  Hands Down Promethium
-    ⎋   3   2   1    0   4           7   6   5   9   8  vol↑
+    ⎋   3   2@  1$   0#  4           7   6   5   9   8  vol↑
     ⇥   v   w   g2   m   j           =_  .:  '2  -+  /  vol↓
     z   s⌃  n⌥  t3   h⌘  k           ,;  a⌘  e1  i⌥  c⌃ q
-    tg  f   p   d    l   x      	 `   u   o   y4  b  tg
+    tg  f   p   d    l   x      	 `   u   o   y   b  tg
                          r⇧  ⌫   ⏎   ␣⇧
 */
 
@@ -109,10 +109,10 @@ static uint16_t keyhold_timer; // for handling Qu combo
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   /*  Hands Down Promethium
-    ⎋   3   2   1    0   4           7   6   5   9   8  vol↑
+    ⎋   3   2@  1$   0#  4           7   6   5   9   8  vol↑
     ⇥   v   w   g2   m   j           =_  .:  '2  -+  /  vol↓
     z   s⌃  n⌥  t3   h⌘  k           ,;  a⌘  e1  i⌥  c⌃ q
-    tg  f   p   d    l   x      	 `   u   o   y4  b  tg
+    tg  f   p   d    l   x      	 `   u   o   y   b  tg
                          r⇧  ⌫   ⏎   ␣⇧
 */
   [DEF] = LAYOUT_voyager(
@@ -322,33 +322,33 @@ enum combos
 uint16_t COMBO_LEN = COMBO_LENGTH;
 
 // define keys that make up combos
-const uint16_t PROGMEM V_combo[] = {KC_W, LT(SYM,KC_G), COMBO_END}; // "q"
-const uint16_t PROGMEM Z_combo[] = {KC_W, KC_M, COMBO_END}; // "z"
-const uint16_t PROGMEM Qu_combo[] = {LT(SYM, KC_G), KC_M, COMBO_END}; // "qu"
-const uint16_t PROGMEM at_combo[] = {KC_EQL, KC_DOT, COMBO_END}; // "@"
-const uint16_t PROGMEM exlm_combo[] = {KC_DOT, LT(SYM, KC_QUOT), COMBO_END}; // "!"
-const uint16_t PROGMEM ques_combo[] = {LT(SYM, KC_QUOT), KC_MINS, COMBO_END}; // "?"
-const uint16_t PROGMEM coln_combo[] = {KC_DOT, KC_MINS, COMBO_END}; // ":"
-const uint16_t PROGMEM scln_combo[] = {KC_COMM, RGUI_T(KC_A), COMBO_END}; // ";"
-const uint16_t PROGMEM ndsh_combo[] = {KC_GRV, KC_U, COMBO_END}; // "–"
-const uint16_t PROGMEM mdsh_combo[] = {KC_GRV, KC_O, COMBO_END}; // "—"
+const uint16_t PROGMEM V_combo[] = {LT3, LT2, COMBO_END}; // "v"
+const uint16_t PROGMEM Z_combo[] = {LT3, LT1, COMBO_END}; // "z"
+const uint16_t PROGMEM Qu_combo[] = {LT2, LT1, COMBO_END}; // "qu"
+const uint16_t PROGMEM at_combo[] = {RT0, RT1, COMBO_END}; // "@"
+const uint16_t PROGMEM exlm_combo[] = {RT1, RT2, COMBO_END}; // "!"
+const uint16_t PROGMEM ques_combo[] = {RT2, RT3, COMBO_END}; // "?"
+const uint16_t PROGMEM coln_combo[] = {RT1, RT3, COMBO_END}; // ":"
+const uint16_t PROGMEM scln_combo[] = {RM0, RM1, COMBO_END}; // ";"
+const uint16_t PROGMEM ndsh_combo[] = {RB0, RB1, COMBO_END}; // "–"
+const uint16_t PROGMEM mdsh_combo[] = {RB0, RB2, COMBO_END}; // "—"
 const uint16_t PROGMEM unds_combo[] = {RB1, RB3, COMBO_END}; // "–"
-const uint16_t PROGMEM eql_combo[] = {KC_O, KC_Y, COMBO_END}; // "="
-const uint16_t PROGMEM tild_combo[] = {KC_U, KC_B, COMBO_END}; // "~"
-const uint16_t PROGMEM esc_combo[] = {LCTL_T(KC_S), LGUI_T(KC_H), COMBO_END}; // "⎋"
-const uint16_t PROGMEM tab_combo[] = {LALT_T(KC_N), LGUI_T(KC_H), COMBO_END}; // "⇥"
-const uint16_t PROGMEM lsft_combo[] = {LALT_T(KC_N), LT(NAV, KC_T), COMBO_END}; // "⇧"
-const uint16_t PROGMEM rsft_combo[] = {LT(NUM, KC_E), RALT_T(KC_I), COMBO_END}; // "⇧"
-const uint16_t PROGMEM bspw_combo[] = {RGUI_T(KC_A), RALT_T(KC_I), COMBO_END}; // "⌫"
-const uint16_t PROGMEM quit_combo[] = {KC_J, KC_K, COMBO_END}; // "⌘Q"
-const uint16_t PROGMEM undo_combo[] = {KC_F, KC_P, COMBO_END}; // "⌘Z"
-const uint16_t PROGMEM copy_combo[] = {KC_P, KC_D, COMBO_END}; // "⌘C"
-const uint16_t PROGMEM pste_combo[] = {KC_D, KC_L, COMBO_END}; // "⌘V"
-const uint16_t PROGMEM cut_combo[] = {KC_P, KC_L, COMBO_END}; // "⌘X"
-const uint16_t PROGMEM sall_combo[] = {KC_F, KC_L, COMBO_END}; // "⌘A"
-const uint16_t PROGMEM pstm_combo[] = {KC_F, KC_L, COMBO_END}; // "Paste & Match Style"
-const uint16_t PROGMEM lprn_combo[] = {LT(NAV, KC_T), LGUI_T(KC_H), COMBO_END}; // "("
-const uint16_t PROGMEM rprn_combo[] = {RGUI_T(KC_A), LT(NUM, KC_E), COMBO_END}; // ")"
+const uint16_t PROGMEM eql_combo[] = {RB2, RB3, COMBO_END}; // "="
+const uint16_t PROGMEM tild_combo[] = {RB1, RB4, COMBO_END}; // "~"
+const uint16_t PROGMEM esc_combo[] = {LM4, LM1, COMBO_END}; // "⎋"
+const uint16_t PROGMEM tab_combo[] = {LM3, LM1, COMBO_END}; // "⇥"
+const uint16_t PROGMEM lsft_combo[] = {LM3, LM2, COMBO_END}; // "os⇧"
+const uint16_t PROGMEM rsft_combo[] = {RM2, RM3, COMBO_END}; // "os⇧"
+const uint16_t PROGMEM bspw_combo[] = {RM1, RM3, COMBO_END}; // "⌫"
+const uint16_t PROGMEM quit_combo[] = {LT0, LM0, COMBO_END}; // "⌘Q"
+const uint16_t PROGMEM undo_combo[] = {LB4, LB3, COMBO_END}; // "⌘Z"
+const uint16_t PROGMEM copy_combo[] = {LB3, LB2, COMBO_END}; // "⌘C"
+const uint16_t PROGMEM pste_combo[] = {LB2, LB1, COMBO_END}; // "⌘V"
+const uint16_t PROGMEM cut_combo[] = {LB3, LB1, COMBO_END}; // "⌘X"
+const uint16_t PROGMEM sall_combo[] = {LB4, LB1, COMBO_END}; // "⌘A"
+const uint16_t PROGMEM pstm_combo[] = {LB4, LB0, COMBO_END}; // "Paste & Match Style"
+const uint16_t PROGMEM lprn_combo[] = {LM2, LM1, COMBO_END}; // "("
+const uint16_t PROGMEM rprn_combo[] = {RM1, RM2, COMBO_END}; // ")"
 
 // map combo names to their keys and the key they trigger
 combo_t key_combos[] =
