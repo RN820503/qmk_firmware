@@ -1,6 +1,4 @@
 
-// #include "keycodes.h"
-// #include "keymap_us.h"
 #include QMK_KEYBOARD_H
 
 enum layer_names {
@@ -12,7 +10,7 @@ enum layer_names {
 };
 
 enum custom_keycodes {
-    SS_Qu = SAFE_RANGE,r
+    SS_Qu = SAFE_RANGE,
 };
 
 /*  KEY POSITION Names
@@ -102,7 +100,7 @@ enum custom_keycodes {
 
 
 
-#include "g/keymap_combo.h"
+// #include "g/keymap_combo.h"
 
 uint8_t  saved_mods = 0;
 static uint16_t keyhold_timer; // for handling Qu combo
@@ -180,7 +178,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, _______, _______, _______,       _______,                   _______, _______,    _______, _______,    _______, _______,
     _______, ___x___, ___x___, _______, C(S(G(KC_4))), ___x___,                   KC_PGUP, G(KC_LEFT), KC_UP,   G(KC_RGHT), ___x___, _______,
     ___x___, KC_LCTL, KC_LALT, _______, KC_LGUI,       ___x___,                   KC_PGDN, KC_LEFT,    KC_DOWN, KC_RGHT,    KC_DEL,  QK_LLCK,
-    ___x___, ___x___, ___x___, ___x___, LSG(KC_4),     ___x___,                   G(KC_Z), SELWBAK,    SELWORD, SELLINE,    LUMINO,  _______,
+    ___x___, ___x___, ___x___, ___x___, LSG(KC_4),     ___x___,                   G(KC_Z), ___x___,    ___x___, ___x___,    ___x___,  _______,
                                                        KC_LSFT, _______, C(KC_LEFT), C(KC_RGHT)
   ),
 
@@ -261,7 +259,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             return true;  // Didn't handle this
             break;
 
-        case SELWBAK:  // Backward word selection.
+        /* case SELWBAK:  // Backward word selection.
             if (record->event.pressed) {
                 select_word_register('B');
             } else {
@@ -283,15 +281,134 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             } else {
                 select_word_unregister();
             }
-            break;
+            break; */
     }
     return true;
 };
 
-const custom_shift_key_t custom_shift_keys[] = {
+// define combo names
+enum combos
+{
+    H_V,
+    H_Z,
+    H_Qu,
+    Hat,
+    Hexlm,
+    Hques,
+    Hcoln,
+    Hscln,
+    Hndsh,
+    Hmdsh,
+    Hunds,
+    Heql,
+    Htild,
+    Hesc,
+    Htab,
+    Hlsft,
+    Hrsft,
+    Hbspw,
+    Hquit,
+    Hundo,
+    Hcopy,
+    Hcut,
+    Hpste,
+    Hsall,
+    Hpstm,
+    Hlprn,
+    Hrprn,
+    COMBO_LENGTH
+};
+
+uint16_t COMBO_LEN = COMBO_LENGTH;
+
+// define keys that make up combos
+const uint16_t PROGMEM V_combo[] = {KC_W, LT(SYM,KC_G), COMBO_END}; // "q"
+const uint16_t PROGMEM Z_combo[] = {KC_W, KC_M, COMBO_END}; // "z"
+const uint16_t PROGMEM Qu_combo[] = {LT(SYM, KC_G), KC_M, COMBO_END}; // "qu"
+const uint16_t PROGMEM at_combo[] = {KC_EQL, KC_DOT, COMBO_END}; // "@"
+const uint16_t PROGMEM exlm_combo[] = {KC_DOT, LT(SYM, KC_QUOT), COMBO_END}; // "!"
+const uint16_t PROGMEM ques_combo[] = {LT(SYM, KC_QUOT), KC_MINS, COMBO_END}; // "?"
+const uint16_t PROGMEM coln_combo[] = {KC_DOT, KC_MINS, COMBO_END}; // ":"
+const uint16_t PROGMEM scln_combo[] = {KC_COMM, RGUI_T(KC_A), COMBO_END}; // ";"
+const uint16_t PROGMEM ndsh_combo[] = {KC_GRV, KC_U, COMBO_END}; // "–"
+const uint16_t PROGMEM mdsh_combo[] = {KC_GRV, KC_O, COMBO_END}; // "—"
+const uint16_t PROGMEM unds_combo[] = {RB1, RB3, COMBO_END}; // "–"
+const uint16_t PROGMEM eql_combo[] = {KC_O, KC_Y, COMBO_END}; // "="
+const uint16_t PROGMEM tild_combo[] = {KC_U, KC_B, COMBO_END}; // "~"
+const uint16_t PROGMEM esc_combo[] = {LCTL_T(KC_S), LGUI_T(KC_H), COMBO_END}; // "⎋"
+const uint16_t PROGMEM tab_combo[] = {LALT_T(KC_N), LGUI_T(KC_H), COMBO_END}; // "⇥"
+const uint16_t PROGMEM lsft_combo[] = {LALT_T(KC_N), LT(NAV, KC_T), COMBO_END}; // "⇧"
+const uint16_t PROGMEM rsft_combo[] = {LT(NUM, KC_E), RALT_T(KC_I), COMBO_END}; // "⇧"
+const uint16_t PROGMEM bspw_combo[] = {RGUI_T(KC_A), RALT_T(KC_I), COMBO_END}; // "⌫"
+const uint16_t PROGMEM quit_combo[] = {KC_J, KC_K, COMBO_END}; // "⌘Q"
+const uint16_t PROGMEM undo_combo[] = {KC_F, KC_P, COMBO_END}; // "⌘Z"
+const uint16_t PROGMEM copy_combo[] = {KC_P, KC_D, COMBO_END}; // "⌘C"
+const uint16_t PROGMEM pste_combo[] = {KC_D, KC_L, COMBO_END}; // "⌘V"
+const uint16_t PROGMEM cut_combo[] = {KC_P, KC_L, COMBO_END}; // "⌘X"
+const uint16_t PROGMEM sall_combo[] = {KC_F, KC_L, COMBO_END}; // "⌘A"
+const uint16_t PROGMEM pstm_combo[] = {KC_F, KC_L, COMBO_END}; // "Paste & Match Style"
+const uint16_t PROGMEM lprn_combo[] = {LT(NAV, KC_T), LGUI_T(KC_H), COMBO_END}; // "("
+const uint16_t PROGMEM rprn_combo[] = {RGUI_T(KC_A), LT(NUM, KC_E), COMBO_END}; // ")"
+
+// map combo names to their keys and the key they trigger
+combo_t key_combos[] =
+{
+    [H_V] = COMBO(V_combo, KC_V),
+    [H_Z] = COMBO(Z_combo, KC_Z),
+    [H_Qu] = COMBO(Qu_combo, SS_Qu),
+    [Hat] = COMBO(at_combo, KC_AT),
+    [Hexlm] = COMBO(exlm_combo, KC_EXLM),
+    [Hques] = COMBO(ques_combo, KC_QUES),
+    [Hcoln] = COMBO(coln_combo, KC_COLN),
+    [Hscln] = COMBO(scln_combo, KC_SCLN),
+    [Hndsh] = COMBO(ndsh_combo, A(KC_MINS)),
+    [Hmdsh] = COMBO(mdsh_combo, A(S(KC_MINS))),
+    [Hunds] = COMBO(unds_combo, KC_UNDS),
+    [Heql] = COMBO(eql_combo, KC_EQL),
+    [Htild] = COMBO(tild_combo, KC_TILD),
+    [Hesc] = COMBO(esc_combo, KC_ESC),
+    [Htab] = COMBO(tab_combo, KC_TAB),
+    [Hlsft] = COMBO(lsft_combo, OSM(MOD_LSFT)),
+    [Hrsft] = COMBO(rsft_combo, OSM(MOD_RSFT)),
+    [Hbspw] = COMBO(bspw_combo, A(KC_BSPC)),
+    [Hquit] = COMBO(quit_combo, G(KC_Q)),
+    [Hundo] = COMBO(undo_combo, G(KC_Z)),
+    [Hcopy] = COMBO(copy_combo, G(KC_C)),
+    [Hpste] = COMBO(pste_combo, G(KC_V)),
+    [Hcut] = COMBO(cut_combo, G(KC_X)),
+    [Hsall] = COMBO(sall_combo, G(KC_A)),
+    [Hpstm] = COMBO(pstm_combo, A(S(G(KC_V)))),
+    [Hlprn] = COMBO(lprn_combo, KC_LPRN),
+    [Hrprn] = COMBO(rprn_combo, KC_RPRN),
+};
+
+// Key overrides
+const key_override_t two_key_override  = ko_make_basic(MOD_MASK_SHIFT, KC_2, KC_AT);		/* shift 2 is @ */
+const key_override_t one_key_override  = ko_make_basic(MOD_MASK_SHIFT, KC_1, KC_DLR);		/* shift 1 is $ */
+const key_override_t zero_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_0, KC_HASH);		/* shift 0 is # */
+const key_override_t eql_key_override =  ko_make_basic(MOD_MASK_SHIFT, KC_EQL, KC_UNDS);	/* shift = is _ */
+const key_override_t dot_key_override  = ko_make_basic(MOD_MASK_SHIFT, KC_DOT, KC_COLN);	/* shift . is : */
+const key_override_t comm_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_COMM, KC_SCLN);	/* shift , is ; */
+const key_override_t mins_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_MINS, KC_PLUS);	/* shift - is + */
+const key_override_t bspc_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_BSPC, KC_DEL);	/* shift ⌫ is ⌦ */
+
+// This globally defines all key overrides to be used
+const key_override_t *key_overrides[] = {
+	&two_key_override,
+	&one_key_override,
+	&zero_key_override,
+    &eql_key_override,
+    &dot_key_override,
+    &comm_key_override,
+    &mins_key_override,
+    &bspc_key_override,
+};
+
+/* const custom_shift_key_t custom_shift_keys[] = {
     {KC_EQL, KC_UNDS},  // Shift = is _
     {KC_DOT, KC_COLN},  // Shift . is :
     {KC_MINS, KC_PLUS}, // Shift - is +
     {KC_COMM, KC_SCLN}, // Shift , is ;
     {KC_BSPC, KC_DEL},  // Shift ⌫ is ⌦
-  };
+};
+ */

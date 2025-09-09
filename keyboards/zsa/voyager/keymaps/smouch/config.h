@@ -21,7 +21,7 @@
 
 #define USB_SUSPEND_WAKEUP_DELAY 0
 #define SERIAL_NUMBER "RmgQl/B5Rbd"
-#define LAYER_STATE_8BIT
+// #define LAYER_STATE_8BIT
 
 // Configure the global tapping term (default: 200ms)
 #undef TAPPING_TERM // if not default
@@ -41,13 +41,13 @@
 #define FLOW_TAP_TERM 150
 
 // Default to Mac hotkeys for Select_word
-#define SELECT_WORD_OS_MAC
+// #define SELECT_WORD_OS_MAC
 
 // Don't apply custom shift keys with mods other than Shift.
-#define CUSTOM_SHIFT_KEYS_NEGMODS ~MOD_MASK_SHIFT
+// #define CUSTOM_SHIFT_KEYS_NEGMODS ~MOD_MASK_SHIFT
 
 // Tell Lumino to never write the Brightness level to EEPROM
-#define LUMINO_NO_EEPROM
+// #define LUMINO_NO_EEPROM
 
 // #undef RGB_MATRIX_TIMEOUT
 // #define RGB_MATRIX_TIMEOUT 300000
@@ -57,7 +57,7 @@
 // #define PALETTEFX_GRADIENT_ENABLE
 // #define PALETTEFX_FLOW_ENABLE
 // #define PALETTEFX_RIPPLE_ENABLE
-#define PALETTEFX_SPARKLE_ENABLE
+// #define PALETTEFX_SPARKLE_ENABLE
 // #define PALETTEFX_VORTEX_ENABLE
 // #define PALETTEFX_REACTIVE_ENABLE
 
@@ -77,7 +77,7 @@
 // #define PALETTEFX_POLARIZED_ENABLE
 // #define PALETTEFX_ROSEGOLD_ENABLE
 // #define PALETTEFX_SPORT_ENABLE
-#define PALETTEFX_SYNTHWAVE_ENABLE
+// #define PALETTEFX_SYNTHWAVE_ENABLE
 // #define PALETTEFX_THERMAL_ENABLE
 // #define PALETTEFX_VIRIDIS_ENABLE
 // #define PALETTEFX_WATERMELON_ENABLE
