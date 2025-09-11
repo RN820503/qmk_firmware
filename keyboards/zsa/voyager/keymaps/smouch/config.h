@@ -47,7 +47,7 @@
 #define CUSTOM_SHIFT_KEYS_NEGMODS ~MOD_MASK_SHIFT
 
 // Tell Lumino to never write the Brightness level to EEPROM
-// #define LUMINO_NO_EEPROM
+#define LUMINO_NO_EEPROM
 
 // #undef RGB_MATRIX_TIMEOUT
 // #define RGB_MATRIX_TIMEOUT 300000
