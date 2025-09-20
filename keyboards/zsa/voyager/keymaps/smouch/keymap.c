@@ -141,7 +141,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     *       <   =   >                   [   _   ]
     *   \   (   -   )   +          	%   {   ;   }   !
     *       *   :	/       		 	&   ~   |
-  */
+  *
   [SYM] = LAYOUT_voyager(
     _______, _______, KC_AT,   KC_DLR,  KC_HASH, _______,                   _______, _______, KC_CIRC, _______, _______, _______,
     _______, ___x___, KC_LABK, KC_EQL,  KC_RABK, ___x___,                   ___x___, KC_LBRC, KC_UNDS, KC_RBRC, ___x___, _______,
@@ -149,6 +149,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, ___x___, KC_ASTR, KC_COLN, KC_SLSH, ___x___,                   ___x___, KC_AMPR, KC_TILD, KC_PIPE, ___x___, _______,
                                                  KC_SPC,  _______, _______, _______
   ),
+  */
 
 
   /* Getreuer Symbols
@@ -156,7 +157,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     *	`	<   >	-	|		    ^  	{   }   $   \
     *   !   *   /   =   &          	#   (   )   ;   "
     *   ~   +   [	]   %		    @ 	:   ,   .	'
-  *
+  */
   [SYM] = LAYOUT_voyager(
     _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______,
     _______, KC_GRV , KC_LABK, KC_RABK, KC_MINS, KC_PIPE,                   KC_CIRC, KC_LCBR, KC_RCBR, KC_DLR , KC_BSLS, _______,
@@ -164,7 +165,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, KC_TILD, KC_PLUS, KC_LBRC, KC_RBRC, KC_PERC,                   KC_AT  , KC_COLN, KC_COMM, KC_DOT , KC_QUOT, _______,
                                                  KC_SPC , _______, _______, _______
   ),
-  */
+
 
   /*
     	                        Sclp                       Pgup    home    up	end
