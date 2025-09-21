@@ -126,7 +126,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, KC_PLUS, KC_EQL,  KC_ASTR, KC_SPC,  _______, _______, _______, _______, _______, _______, _______
     ),
 
-    /* Getreur Symbols
+    /* Getreuer Symbols
     *
     *	`	<   >	-	|		    ^  	{   }   $   \
     *   !   *   /   =   &          	#   (   )   ;   "
@@ -134,7 +134,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     */
     [_SYM] = LAYOUT(
     KC_GRV,  KC_LABK, KC_RABK, KC_MINS, KC_PIPE,                   KC_CIRC, KC_LCBR, KC_RCBR, KC_DLR,  KC_BSLS,
-    KC_EXLM, KC_ASTR, KC_SLSH, KC_RPRN, KC_AMPR,                   KC_HASH, KC_LPRN, KC_RPRN, KC_SCLN, KC_DQT,
+    KC_EXLM, KC_ASTR, KC_SLSH, KC_EQL,  KC_AMPR,                   KC_HASH, KC_LPRN, KC_RPRN, KC_SCLN, KC_DQT,
 	KC_TILD, KC_PLUS, KC_LBRC, KC_RBRC, KC_PERC, _______, _______, KC_AT,   KC_COLN, KC_COMM, KC_DOT,  KC_QUOT,
     _______, _______, _______, _______, KC_SPC,  _______, _______, _______, _______, _______, _______, _______
     ),
