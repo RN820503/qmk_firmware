@@ -124,9 +124,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  /*	BEAKL-19 Numpad
 		⇥	+	=	*
     ⇥   -   5   2   3   :
-        7   .   1   0   4       	,   ⌘  (mo)  ⌥	 ⌃
+    lk  7   .   1   0   4       	,   ⌘  (mo)  ⌥	 ⌃
         /   6   9   8   ,
-    	                ␣   ⌫   ⏎   lk
+    	                ␣   ⌫   ⏎
   */
   [NUM] = LAYOUT_voyager(
     _______, KC_TAB,  KC_PLUS, KC_EQL, KC_ASTR,  ___x___,                   _______, _______, _______, _______, _______, _______,
@@ -286,11 +286,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 };
 
 const custom_shift_key_t custom_shift_keys[] = {
-    {KC_2, KC_AT},      // Shift 2 is @
-    {KC_1, KC_DLR},     // Shift 1 is $
-    {KC_0, KC_AT},      // Shift 0 is #
-    {KC_EQL, KC_UNDS},  // Shift = is _
-    {KC_DOT, KC_COLN},  // Shift . is :
+    {KC_2,    KC_AT},   // Shift 2 is @
+    {KC_1,    KC_DLR},  // Shift 1 is $
+    {KC_0,    KC_HASH}, // Shift 0 is #
+    {KC_EQL,  KC_UNDS}, // Shift = is _
+    {KC_DOT,  KC_COLN}, // Shift . is :
     {KC_MINS, KC_PLUS}, // Shift - is +
     {KC_COMM, KC_SCLN}, // Shift , is ;
     {KC_BSPC, KC_DEL},  // Shift ⌫ is ⌦
