@@ -107,7 +107,7 @@ static uint16_t keyhold_timer; // for handling Qu combo
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   /*  Hands Down Promethium
-    ⎋   3   2@  1$   0#  4           7   6   5   9   8  vol↑
+    ⎋   3   2   1$   0#  4           7   6   5   9   8  vol↑
     ⇥   v   w   g2   m   j           =_  .:  '2  -+  /  vol↓
     z   s⌃  n⌥  t3   h⌘  k           ,;  a⌘  e1  i⌥  c⌃ q
     tg  f   p   d    l   x      	 `   u   o   y   b  tg
@@ -286,9 +286,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 };
 
 const custom_shift_key_t custom_shift_keys[] = {
-    {KC_2,    KC_AT},   // Shift 2 is @
-    {KC_1,    KC_DLR},  // Shift 1 is $
-    {KC_0,    KC_HASH}, // Shift 0 is #
     {KC_EQL,  KC_UNDS}, // Shift = is _
     {KC_DOT,  KC_COLN}, // Shift . is :
     {KC_MINS, KC_PLUS}, // Shift - is +
