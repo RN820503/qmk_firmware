@@ -22,7 +22,7 @@ enum custom_keycodes {
 */
 
 /*  Hands Down Promethium
-    ⎋   3   2@  1$   0#  4           7   6   5   9   8  vol↑
+    ⎋   3   2   1    0   4           7   6   5   9   8  vol↑
     ⇥   v   w   g2   m   j           =_  .:  '2  -+  /  vol↓
     z   s⌃  n⌥  t3   h⌘  k           ,;  a⌘  e1  i⌥  c⌃ q
     tg  f   p   d    l   x      	 `   u   o   y   b  tg
@@ -107,7 +107,7 @@ static uint16_t keyhold_timer; // for handling Qu combo
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   /*  Hands Down Promethium
-    ⎋   3   2   1$   0#  4           7   6   5   9   8  vol↑
+    ⎋   3   2   1    0   4           7   6   5   9   8  vol↑
     ⇥   v   w   g2   m   j           =_  .:  '2  -+  /  vol↓
     z   s⌃  n⌥  t3   h⌘  k           ,;  a⌘  e1  i⌥  c⌃ q
     tg  f   p   d    l   x      	 `   u   o   y   b  tg
@@ -239,7 +239,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 keyhold_timer = 0;
                 register_code(KC_Q);
 
-                if (!(saved_mods & (MOD_MASK_GUI + MOD_MASK_ALT + MOD_MASK_CTRL))) {// Only allow shift or caps
+                if (!(saved_mods & (MOD_MASK_GUI + MOD_MASK_ALT + MOD_MASK_CTRL))) { // Only allow shift or caps
                     keyhold_timer = timer_read(); // time held, or since last pressed alone
                     clear_mods();
                     tap_code(KC_U);
