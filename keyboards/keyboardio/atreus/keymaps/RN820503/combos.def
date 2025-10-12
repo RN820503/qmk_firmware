@@ -1,21 +1,21 @@
 /*    COMBO NAME       | OUTPUT    | PARAMS    */
 
 /*---- standard alphas and punctuation ----*/
-COMB(H_Z,               KC_Z,       LT3, LT2)
-COMB(H_Q,               KC_Q,       LT2, LT1)
-COMB(Hat,               KC_AT,      RT0, RT1)
-COMB(Hexlm,             KC_EXLM,    RT1, RT2)
-COMB(Hques,             KC_QUES,    RT2, RT3)
-COMB(Hcoln,             KC_COLN,    RT1, RT3)
-COMB(Hscln,             KC_SCLN,    RM0, RM1)
-COMB(Hndsh,             A(KC_MINS), RB0, RB1)
-COMB(Hmdsh,             A(S(KC_MINS)), RB0, RB2)
-COMB(Hunds,             KC_UNDS,    RB1, RB3)
-COMB(Heql,              KC_EQL,     RB2, RB3)
-COMB(Htild,             KC_TILD,    RB1, RB4)
+COMB(H_Z,               KC_Z,         LT3, LT2)
+COMB(H_Q,               KC_Q,         LT3, LT1)
+COMB(Hat,               KC_AT,        RT0, RT1)
+COMB(Hexlm,             KC_EXLM,      RT1, RT2)
+COMB(Hques,             KC_QUES,      RT2, RT3)
+COMB(Hcoln,             KC_COLN,      RT1, RT3)
+COMB(Hscln,             KC_SCLN,      RM0, RM1)
+COMB(Hndsh,             A(KC_MINS),   RB0, RB1)
+COMB(Hmdsh,             LSA(KC_MINS), RB0, RB2)
+COMB(Hunds,             KC_UNDS,      RB1, RB3)
+COMB(Heql,              KC_EQL,       RB2, RB3)
+COMB(Htild,             KC_TILD,      RB1, RB4)
 
 /*---- digraphs ----*/
-COMB(H_Qu,              SS_Qu,      LT3, LT1)
+COMB(H_Qu,              SS_Qu,        LT2, LT1)
 
 /*---- commands ----*/
 COMB(Htab,            	KC_TAB,     LM3, LM2)
@@ -41,7 +41,7 @@ COMB(Hcut,              G(KC_X),    LB3, LB1)
 COMB(Hcopy,             G(KC_C),    LB3, LB2)
 COMB(Hpste,             G(KC_V),    LB2, LB1)
 COMB(Hsall,             G(KC_A),    LB4, LB1)
-COMB(Hpstm,             A(S(G(KC_V))), LB4, LB0)
+COMB(Hpstm,             LSAG(KC_V), LB4, LB0)
 
 /* --- parens and brackets --- */
 COMB(Hlprn,             KC_LPRN,    LM2, LM1)

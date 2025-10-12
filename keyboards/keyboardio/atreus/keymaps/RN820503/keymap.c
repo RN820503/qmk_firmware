@@ -3,9 +3,6 @@
 // this is the style you want to emulate.
 // This is the canonical layout file for the Quantum project. If you want to add another keyboard,
 
-//#include "keycodes.h"
-//#include "keymap_us.h"
-//#include "quantum_keycodes.h"
 #include QMK_KEYBOARD_H
 
 enum layer_names {
@@ -160,10 +157,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                           dsk-    dsk+
     */
     [_NAV] = LAYOUT(
-    ___x___, ___x___, _______, C(S(G(KC_4))), ___x___,                   KC_VOLU,    G(KC_LEFT), KC_UP,   G(KC_RGHT), ___x___,
-    KC_LCTL, KC_LALT, _______, KC_LGUI,       ___x___,                   KC_VOLD,    KC_LEFT,    KC_DOWN, KC_RGHT,    KC_DEL,
-    ___x___, ___x___, ___x___, LSG(KC_4),     ___x___, _______, _______, KC_MUTE,    SELWBAK,    SELWORD, SELLINE,    ___x___,
-    _______, _______, _______, _______,       _______, _______, _______, C(KC_LEFT), C(KC_RGHT), _______, _______,    _______
+    ___x___, ___x___, _______, LCSG(KC_4), ___x___,                   KC_VOLU,    G(KC_LEFT), KC_UP,   G(KC_RGHT), ___x___,
+    KC_LCTL, KC_LALT, _______, KC_LGUI,    ___x___,                   KC_VOLD,    KC_LEFT,    KC_DOWN, KC_RGHT,    KC_DEL,
+    ___x___, ___x___, ___x___, LSG(KC_4),  ___x___, _______, _______, KC_MUTE,    SELWBAK,    SELWORD, SELLINE,    ___x___,
+    _______, _______, _______, _______,    _______, _______, _______, C(KC_LEFT), C(KC_RGHT), _______, _______,    _______
     ),
 
 };
