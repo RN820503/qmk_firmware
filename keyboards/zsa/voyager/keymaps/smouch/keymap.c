@@ -167,7 +167,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
 
-  /*
+  /* Navigation
     	                        Sclp                       Pgup    home    up	end
     	⌃      ⌥       (mo)     ⌘            		       Pgdn    left    dn	rght	del
     	                        Scap                       undo    ←wrd    wrd→ ←line→
