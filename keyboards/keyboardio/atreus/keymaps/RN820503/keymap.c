@@ -7,9 +7,9 @@
 
 enum layer_names {
     _DEF,
+    _NAV,
     _NUM,
     _SYM,
-    _NAV,
 };
 
 enum custom_keycodes {
@@ -110,6 +110,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     LH4, LH3, LH2, LH1, LH0, LH00, RH00, RH0, RH1, RH2, RH3, RH4
     ),
 
+    /* Navigation
+                               Sclp                       vol+    home    up	end
+    	⌃       ⌥       (mo)   ⌘             		      vol-    left    dn	rght    ⌦
+    	                       Scap                       mute    ←Sel    Sel→  ←line→
+                                                          dsk-    dsk+
+    */
+    [_NAV] = LAYOUT(
+    ___x___, ___x___, _______, LCSG(KC_4), ___x___,                   KC_VOLU,    G(KC_LEFT), KC_UP,   G(KC_RGHT), ___x___,
+    KC_LCTL, KC_LALT, _______, KC_LGUI,    ___x___,                   KC_VOLD,    KC_LEFT,    KC_DOWN, KC_RGHT,    KC_DEL,
+    ___x___, ___x___, ___x___, LSG(KC_4),  ___x___, _______, _______, KC_MUTE,    SELWBAK,    SELWORD, SELLINE,    ___x___,
+    _______, _______, _______, _______,    _______, _______, _______, C(KC_LEFT), C(KC_RGHT), _______, _______,    _______
+    ),
+
     /*  BEAKL-19 numpad
     	-   5   2   3   :
     	7   .   1   0   4           ⌘   mo   ⌥	⌃
@@ -134,33 +147,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_EXLM, KC_ASTR, KC_SLSH, KC_EQL,  KC_AMPR,                   KC_HASH, KC_LPRN, KC_RPRN, KC_SCLN, KC_DQT,
 	KC_TILD, KC_PLUS, KC_LBRC, KC_RBRC, KC_PERC, _______, _______, KC_AT,   KC_COLN, KC_COMM, KC_DOT,  KC_QUOT,
     _______, _______, _______, _______, KC_SPC,  _______, _______, _______, _______, _______, _______, _______
-    ),
-
-    /*  BEAKL-27 symbols
-    *       <   =   >   #   	@	[	_   ]
-    *   \   (   -   )   +       %   {   ;   }	!
-    *       *   :   /   $		^	&	~	|
-    *                   ␣
-    *
-    [_SYM] = LAYOUT(
-    ___x___, KC_LABK, KC_EQL,  KC_RABK, KC_HASH,                   KC_AT,   KC_LBRC, KC_UNDS, KC_RBRC, ___x___,
-    KC_BSLS, KC_LPRN, KC_MINS, KC_RPRN, KC_PLUS,                   KC_PERC, KC_LCBR, KC_SCLN, KC_RCBR, KC_EXLM,
-	___x___, KC_ASTR, KC_COLN, KC_SLSH, KC_DLR,  _______, _______, KC_CIRC, KC_AMPR, KC_TILD, KC_PIPE, ___x___,
-    _______, _______, _______, _______, KC_SPC,  _______, _______, _______, _______, _______, _______, _______
-    ),
-    */
-
-    /*
-                               Sclp                       vol+    home    up	end
-    	⌃       ⌥       (mo)   ⌘             		      vol-    left    dn	rght    ⌦
-    	                       Scap                       mute    ←Sel    Sel→  ←line→
-                                                          dsk-    dsk+
-    */
-    [_NAV] = LAYOUT(
-    ___x___, ___x___, _______, LCSG(KC_4), ___x___,                   KC_VOLU,    G(KC_LEFT), KC_UP,   G(KC_RGHT), ___x___,
-    KC_LCTL, KC_LALT, _______, KC_LGUI,    ___x___,                   KC_VOLD,    KC_LEFT,    KC_DOWN, KC_RGHT,    KC_DEL,
-    ___x___, ___x___, ___x___, LSG(KC_4),  ___x___, _______, _______, KC_MUTE,    SELWBAK,    SELWORD, SELLINE,    ___x___,
-    _______, _______, _______, _______,    _______, _______, _______, C(KC_LEFT), C(KC_RGHT), _______, _______,    _______
     ),
 
 };
