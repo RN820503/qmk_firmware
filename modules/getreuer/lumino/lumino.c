@@ -179,6 +179,20 @@ void lumino_sleep_soon(void) {
   update_sleep_timer();
 }
 
+void lumino_wake(uint8_t step) {
+#ifdef USE_SLEEP_TIMER
+  event_count = qadd8(event_count, step);
+#endif  // USE_SLEEP_TIMER
+
+  if (awake_value > 0) {
+    if (!awake || (anim_start_time && anim_end_value == 0)) {
+      anim_play(ANIM_WAKE, awake_value);  // Wake up.
+    } else {
+      update_sleep_timer();
+    }
+  }
+}
+
 void housekeeping_task_lumino(void) {
   if (!awake) { return; }
 
@@ -250,9 +264,6 @@ bool process_record_lumino(uint16_t keycode, keyrecord_t* record) {
   if (!process_record_lumino_kb(keycode, record)) {
     return false;
   }
-#ifdef USE_SLEEP_TIMER
-  event_count = qadd8(event_count, 1);
-#endif  // USE_SLEEP_TIMER
 
   switch (keycode) {
     case LUMINO:
@@ -262,16 +273,25 @@ bool process_record_lumino(uint16_t keycode, keyrecord_t* record) {
       break;
 
     default:
-      if (awake_value > 0) {
-        if (!awake || (anim_start_time && anim_end_value == 0)) {
-          anim_play(ANIM_WAKE, awake_value);  // Wake up.
-        } else {
-          update_sleep_timer();
-        }
-      }
+      lumino_wake(1);
   }
   return true;
 }
+
+#ifdef POINTING_DEVICE_ENABLE
+report_mouse_t pointing_device_task_lumino(report_mouse_t mouse_report) {
+  static uint16_t last_action = 0;
+  if (timer_elapsed(last_action) < 100) {
+    return pointing_device_task_lumino_kb(mouse_report);
+  }
+  if (mouse_report.x || mouse_report.y || mouse_report.h || mouse_report.v || mouse_report.buttons) {
+    last_action = timer_read();
+
+    lumino_wake(1);
+  }
+  return pointing_device_task_lumino_kb(mouse_report);
+}
+#endif // POINTING_DEVICE_ENABLE
 
 bool shutdown_lumino(bool jump_to_bootloader) {
   if (!shutdown_lumino_kb(jump_to_bootloader)) {
