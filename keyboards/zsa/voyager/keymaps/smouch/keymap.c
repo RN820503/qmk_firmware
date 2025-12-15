@@ -268,10 +268,18 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     return true;
 };
 
-const custom_shift_key_t custom_shift_keys[] = {
-    {KC_EQL,  KC_UNDS}, // Shift = is _
-    {KC_DOT,  KC_COLN}, // Shift . is :
-    {KC_MINS, KC_PLUS}, // Shift - is +
-    {KC_COMM, KC_SCLN}, // Shift , is ;
-    {KC_BSPC, KC_DEL},  // Shift ⌫ is ⌦
+// Key overrides
+const key_override_t eql_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_EQL, KC_UNDS);	    /* shift = is _ */
+const key_override_t dot_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_DOT, KC_COLN);		/* shift . is : */
+const key_override_t mins_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_MINS, KC_PLUS);	/* shift - is + */
+const key_override_t comm_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_COMM, KC_SCLN);	/* shift , is ; */
+const key_override_t bsls_key_override = ko_make_basic(MOD_MASK_ALT, KC_SLSH, KC_BSLS);		/* alt   / is \ */
+
+// This globally defines all key overrides to be used
+const key_override_t *key_overrides[] = {
+    &eql_key_override,
+    &dot_key_override,
+    &mins_key_override,
+    &comm_key_override,
+    &bsls_key_override,
 };

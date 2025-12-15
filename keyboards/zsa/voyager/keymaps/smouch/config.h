@@ -44,43 +44,7 @@
 #define SELECT_WORD_OS_MAC
 
 // Don't apply custom shift keys with mods other than Shift.
-#define CUSTOM_SHIFT_KEYS_NEGMODS ~MOD_MASK_SHIFT
+// #define CUSTOM_SHIFT_KEYS_NEGMODS ~MOD_MASK_SHIFT
 
 // Tell Lumino to never write the Brightness level to EEPROM
 #define LUMINO_NO_EEPROM
-
-// #undef RGB_MATRIX_TIMEOUT
-// #define RGB_MATRIX_TIMEOUT 300000
-// #define RGB_MATRIX_STARTUP_SPD 60
-
-// Enable just the effects you want.
-// #define PALETTEFX_GRADIENT_ENABLE
-// #define PALETTEFX_FLOW_ENABLE
-// #define PALETTEFX_RIPPLE_ENABLE
-// #define PALETTEFX_SPARKLE_ENABLE
-// #define PALETTEFX_VORTEX_ENABLE
-// #define PALETTEFX_REACTIVE_ENABLE
-
-// Or enable all effects with
-// #define PALETTEFX_ENABLE_ALL_EFFECTS
-
-// Enable just the palettes you want.
-// #define PALETTEFX_AFTERBURN_ENABLE
-// #define PALETTEFX_AMBER_ENABLE
-// #define PALETTEFX_BADWOLF_ENABLE
-// #define PALETTEFX_CARNIVAL_ENABLE
-// #define PALETTEFX_CLASSIC_ENABLE
-// #define PALETTEFX_DRACULA_ENABLE
-// #define PALETTEFX_GROOVY_ENABLE
-// #define PALETTEFX_NOTPINK_ENABLE
-// #define PALETTEFX_PHOSPHOR_ENABLE
-// #define PALETTEFX_POLARIZED_ENABLE
-// #define PALETTEFX_ROSEGOLD_ENABLE
-// #define PALETTEFX_SPORT_ENABLE
-// #define PALETTEFX_SYNTHWAVE_ENABLE
-// #define PALETTEFX_THERMAL_ENABLE
-// #define PALETTEFX_VIRIDIS_ENABLE
-// #define PALETTEFX_WATERMELON_ENABLE
-
-// Or enable all palettes with
-// #define PALETTEFX_ENABLE_ALL_PALETTES
