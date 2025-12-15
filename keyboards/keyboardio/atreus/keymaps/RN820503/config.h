@@ -77,7 +77,7 @@
 #define SELECT_WORD_OS_MAC
 
 // Don't apply custom shift keys when any non-shift mod is held.
-#define CUSTOM_SHIFT_KEYS_NEGMODS ~MOD_MASK_SHIFT
+// #define CUSTOM_SHIFT_KEYS_NEGMODS ~MOD_MASK_SHIFT
 
 #define COMBO_TERM 30        // how quickly all combo keys must be pressed in succession to trigger
 // #define COMBO_TERM_PER_KEY   // reduce for combos that misfire on rolls

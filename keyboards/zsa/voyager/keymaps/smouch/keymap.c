@@ -274,6 +274,7 @@ const key_override_t dot_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_DOT, KC
 const key_override_t mins_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_MINS, KC_PLUS);	/* shift - is + */
 const key_override_t comm_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_COMM, KC_SCLN);	/* shift , is ; */
 const key_override_t bsls_key_override = ko_make_basic(MOD_MASK_ALT, KC_SLSH, KC_BSLS);		/* alt   / is \ */
+const key_override_t bspc_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_BSPC, KC_DEL);	/* shift ⌫ is ⌦ */
 
 // This globally defines all key overrides to be used
 const key_override_t *key_overrides[] = {
@@ -282,4 +283,5 @@ const key_override_t *key_overrides[] = {
     &mins_key_override,
     &comm_key_override,
     &bsls_key_override,
+    &bspc_key_override,
 };
