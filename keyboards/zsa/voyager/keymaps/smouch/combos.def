@@ -23,7 +23,7 @@ COMB(Htab,            	KC_TAB,     LM3, LM2)
 /* COMB(Hlsft,             OSM(MOD_LSFT), 	LM2, LM3) */
 /* COMB(Hent,              KC_ENT, 	RM1, RM3) */
 /* COMB(Hrsft,             OSM(MOD_RSFT), 	RM2, RM3) */
-COMB(Hdel,              KC_DEL,     LM3, LM1)
+COMB(Hdel,              KC_DEL,     RM1, RM3)
 /* COMB(Hbspc,             KC_BSPC,    RM1, RM2, RM3) */
 COMB(Hbspw,             A(KC_BSPC), RM2, RM3)
 
