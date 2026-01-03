@@ -64,10 +64,10 @@ enum custom_keycodes {
 #define LB2 KC_D
 #define LB1 KC_L
 #define LB0 KC_X
-#define LB00 KC_VOLD
+#define LB00 KC_GRV
 
-#define RB00 KC_VOLU
-#define RB0 KC_GRV
+#define RB00 KC_BSLS
+#define RB0 KC_SCLN
 #define RB1 KC_U
 #define RB2 KC_O
 #define RB3 KC_Y
@@ -98,9 +98,9 @@ static uint16_t keyhold_timer; // for handling Qu combo
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	/*  Hands Down Promethium
-    v   w   g2   m   j           =_  .:  '2   -+  /
+    v   w   g2   m   j           =   .:  '2   -   /
     s⌃  n⌥  t3   h⌘  k           ,;  a⌘  e1   i⌥  c⌃
-    f   p   d    l   x	Vol Vol	 `   u   o    y   b
+    f   p   d    l   x	 `   \	 ;   u   o    y   b
     ←   →  app   ⇥   r⇧  ⌫   ⏎   ␣⇧  ⎋  num   ↑   ↓
     */
 
@@ -112,15 +112,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     /* Navigation
-                               Sclp                       vol+    home    up	end
-    	⌃       ⌥       (mo)   ⌘             		      vol-    left    dn	rght    ⌦
-    	                       Scap                       mute    ←Sel    Sel→  ←line→
-                                                          dsk-    dsk+
+                               Sclp                       ⌘⌫    home    up	end     ⌘⌦
+    	⌃       ⌥       (mo)   ⌘             		      ⌫     left    dn	rght    ⌦
+    	                       Scap                       ⌥⌫    ←Sel   Sel→  ←line→ ⌥⌦
+                                                          dsk-  dsk+
     */
     [_NAV] = LAYOUT(
-    ___x___, ___x___, _______, LCSG(KC_4), ___x___,                   KC_VOLU,    G(KC_LEFT), KC_UP,   G(KC_RGHT), ___x___,
-    KC_LCTL, KC_LALT, _______, KC_LGUI,    ___x___,                   KC_VOLD,    KC_LEFT,    KC_DOWN, KC_RGHT,    KC_DEL,
-    ___x___, ___x___, ___x___, LSG(KC_4),  ___x___, _______, _______, KC_MUTE,    SELWBAK,    SELWORD, SELLINE,    ___x___,
+    ___x___, ___x___, _______, LCSG(KC_4), ___x___,                   G(KC_BSPC), G(KC_LEFT), KC_UP,   G(KC_RGHT), G(KC_DEL),
+    KC_LCTL, KC_LALT, _______, KC_LGUI,    ___x___,                   KC_BSPC,    KC_LEFT,    KC_DOWN, KC_RGHT,    KC_DEL,
+    ___x___, ___x___, ___x___, LSG(KC_4),  ___x___, KC_VOLD, KC_VOLU, A(KC_BSPC), SELWBAK,    SELWORD, SELLINE,    A(KC_DEL),
     _______, _______, _______, _______,    _______, _______, _______, C(KC_LEFT), C(KC_RGHT), _______, _______,    _______
     ),
 
