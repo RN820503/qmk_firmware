@@ -11,7 +11,7 @@ COMB(Hscln,             KC_SCLN,    RM0, RM1)
 COMB(Hndsh,             A(KC_MINS), RB0, RB1)
 COMB(Hmdsh,             LSA(KC_MINS), RB0, RB2)
 COMB(Hunds,             KC_UNDS,    RB1, RB3)
-COMB(Heql,              KC_EQL,     RB2, RB3)
+COMB(Hplus,             KC_PLUS,    RB2, RB3)
 COMB(Htild,             KC_TILD,    RB1, RB4)
 
 /*---- digraphs ----*/
