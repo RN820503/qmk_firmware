@@ -23,9 +23,9 @@ enum custom_keycodes {
 
 /*  Hands Down Promethium
     ⎋   3   2   1    0   4           7   6   5   9   8  vol↑
-    ⇥   v   w   g2   m   j           =_  .:  '2  -+  /  vol↓
-    z   s⌃  n⌥  t3   h⌘  k           ,;  a⌘  e1  i⌥  c⌃ q
-    tg  f   p   d    l   x      	 `   u   o   y   b  tg
+    ⇥   v   w   g2   m   j           =   .   '2  -   /  vol↓
+    z   s⌃  n⌥  t3   h⌘  k           ,   a⌘  e1  i⌥  c⌃ q
+    `   f   p   d    l   x      	 ;   u   o   y   b  \
                          r⇧  ⌫   ⏎   ␣⇧
 */
 
@@ -75,19 +75,19 @@ enum custom_keycodes {
 #define RM5 KC_Q
 
 // bottom row
-#define LB5 KC_NO
+#define LB5 KC_GRV
 #define LB4 KC_F
 #define LB3 KC_P
 #define LB2 KC_D
 #define LB1 KC_L
 #define LB0 KC_X
 
-#define RB0 KC_GRV
+#define RB0 KC_SCLN
 #define RB1 KC_U
 #define RB2 KC_O
 #define RB3 KC_Y
 #define RB4 KC_B
-#define RB5 TG(GAM)
+#define RB5 KC_BSLS
 
 // thumb row
 #define LH1 LSFT_T(KC_R)
@@ -108,9 +108,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   /*  Hands Down Promethium
     ⎋   3   2   1    0   4           7   6   5   9   8  vol↑
-    ⇥   v   w   g2   m   j           =_  .:  '2  -+  /  vol↓
-    z   s⌃  n⌥  t3   h⌘  k           ,;  a⌘  e1  i⌥  c⌃ q
-    tg  f   p   d    l   x      	 `   u   o   y   b  tg
+    ⇥   v   w   g2   m   j           =   .   '2  -   /  vol↓
+    z   s⌃  n⌥  t3   h⌘  k           ,   a⌘  e1  i⌥  c⌃ q
+    `   f   p   d    l   x      	 ;   u   o   y   b  \
                          r⇧  ⌫   ⏎   ␣⇧
 */
   [DEF] = LAYOUT_voyager(
@@ -269,19 +269,19 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 };
 
 // Key overrides
-const key_override_t eql_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_EQL, KC_UNDS);	    /* shift = is _ */
-const key_override_t dot_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_DOT, KC_COLN);		/* shift . is : */
-const key_override_t mins_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_MINS, KC_PLUS);	/* shift - is + */
-const key_override_t comm_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_COMM, KC_SCLN);	/* shift , is ; */
-const key_override_t bsls_key_override = ko_make_basic(MOD_MASK_ALT, KC_SLSH, KC_BSLS);		/* alt   / is \ */
-const key_override_t bspc_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_BSPC, KC_DEL);	/* shift ⌫ is ⌦ */
+/* const key_override_t eql_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_EQL, KC_UNDS);
+const key_override_t dot_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_DOT, KC_COLN);
+const key_override_t mins_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_MINS, KC_PLUS);
+const key_override_t comm_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_COMM, KC_SCLN);
+const key_override_t bsls_key_override = ko_make_basic(MOD_MASK_ALT, KC_SLSH, KC_BSLS);
+const key_override_t bspc_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_BSPC, KC_DEL); */
 
 // This globally defines all key overrides to be used
-const key_override_t *key_overrides[] = {
+/* const key_override_t *key_overrides[] = {
     &eql_key_override,
     &dot_key_override,
     &mins_key_override,
     &comm_key_override,
     &bsls_key_override,
     &bspc_key_override,
-};
+}; */

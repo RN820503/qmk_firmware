@@ -15,7 +15,7 @@
 
 #define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
 // Holding Shift while Caps Word is active inverts the shift state.
-#define CAPS_WORD_INVERT_ON_SHIFT
+// #define CAPS_WORD_INVERT_ON_SHIFT
 // When idle, turn off Caps Word after 5 seconds.
 #define CAPS_WORD_IDLE_TIMEOUT 5000
 
