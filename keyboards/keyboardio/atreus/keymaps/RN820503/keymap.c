@@ -112,15 +112,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     /* Navigation
-                               Sclp                       ⌘⌫    home    up	end     ⌘⌦
-    	⌃       ⌥       (mo)   ⌘             		      ⌫     left    dn	rght    ⌦
-    	                       Scap                       ⌥⌫    ←Sel   Sel→  ←line→ ⌥⌦
+                               Sclp                       pg↑   home   up	end
+    	⌃       ⌥       (mo)   ⌘             		      pg↓   left   dn	rght    ⌦
+    	                       Scap                             ←Sel   Sel→ line
                                                           dsk-  dsk+
     */
     [_NAV] = LAYOUT(
-    ___x___, ___x___, _______, LCSG(KC_4), ___x___,                   G(KC_BSPC), G(KC_LEFT), KC_UP,   G(KC_RGHT), G(KC_DEL),
-    KC_LCTL, KC_LALT, _______, KC_LGUI,    ___x___,                   KC_BSPC,    KC_LEFT,    KC_DOWN, KC_RGHT,    KC_DEL,
-    ___x___, ___x___, ___x___, LSG(KC_4),  ___x___, KC_VOLD, KC_VOLU, A(KC_BSPC), SELWBAK,    SELWORD, SELLINE,    A(KC_DEL),
+    ___x___, ___x___, _______, LCSG(KC_4), ___x___,                   KC_PGUP, G(KC_LEFT), KC_UP,   G(KC_RGHT), ___x___,
+    KC_LCTL, KC_LALT, _______, KC_LGUI,    ___x___,                   KC_PGDN, KC_LEFT,    KC_DOWN, KC_RGHT,    KC_DEL,
+    ___x___, ___x___, ___x___, LSG(KC_4),  ___x___, KC_VOLD, KC_VOLU, ___x___, SELWBAK,    SELWORD, SELLINE,    ___x___,
     _______, _______, _______, _______,    _______, _______, _______, C(KC_LEFT), C(KC_RGHT), _______, _______,    _______
     ),
 

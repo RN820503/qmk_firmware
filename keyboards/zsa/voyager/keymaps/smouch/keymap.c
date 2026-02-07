@@ -124,14 +124,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   /* Navigation
     	                        Sclp                       Pgup    home    up	end
     	⌃      ⌥       (mo)     ⌘            		       Pgdn    left    dn	rght	del
-    	                        Scap                       undo    ←wrd    wrd→ ←line→
+    	                        Scap                       undo    ←wrd    wrd→ line
                                         ⇧
   */
   [NAV] = LAYOUT_voyager(
     _______, _______, _______, _______, _______,    _______,                      _______, _______,    _______, _______,    _______, _______,
     _______, ___x___, ___x___, _______, LCSG(KC_4), ___x___,                      KC_PGUP, G(KC_LEFT), KC_UP,   G(KC_RGHT), ___x___, _______,
     ___x___, KC_LCTL, KC_LALT, _______, KC_LGUI,    ___x___,                      KC_PGDN, KC_LEFT,    KC_DOWN, KC_RGHT,    KC_DEL,  QK_LLCK,
-    ___x___, ___x___, ___x___, ___x___, LSG(KC_4),  ___x___,                      G(KC_Z), SELWBAK,    SELWORD, SELLINE,    LUMINO,  _______,
+    ___x___, ___x___, ___x___, ___x___, LSG(KC_4),  ___x___,                      ___x___, SELWBAK,    SELWORD, SELLINE,    LUMINO,  _______,
                                                     KC_LSFT, _______, C(KC_LEFT), C(KC_RGHT)
   ),
 
