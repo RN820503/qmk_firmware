@@ -152,14 +152,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   /* Getreuer Symbols
     *
-    *	`	<   >	-	|		    $  	.   '   ,   ^
-    *   !   *   /   =   &          	@   (   )   ;   "
+    *	`	<   >	-	|		    @  	.   '   $   ^
+    *   !   *   /   =   &          	,   (   )   ;   "
     *   ~   +   [	]   %		    # 	{   }   :	\
   */
   [SYM] = LAYOUT_voyager(
     _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______,
-    _______, KC_GRV , KC_LABK, KC_RABK, KC_MINS, KC_PIPE,                   KC_DLR , KC_DOT , KC_QUOT, KC_COMM, KC_CIRC, _______,
-    QK_LLCK, KC_EXLM, KC_ASTR, KC_SLSH, KC_EQL,  KC_AMPR,                   KC_AT  , KC_LPRN, KC_RPRN, KC_SCLN, KC_DQUO, QK_LLCK,
+    _______, KC_GRV , KC_LABK, KC_RABK, KC_MINS, KC_PIPE,                   KC_AT  , KC_DOT , KC_QUOT, KC_DLR , KC_CIRC, _______,
+    QK_LLCK, KC_EXLM, KC_ASTR, KC_SLSH, KC_EQL,  KC_AMPR,                   KC_COMM, KC_LPRN, KC_RPRN, KC_SCLN, KC_DQUO, QK_LLCK,
     _______, KC_TILD, KC_PLUS, KC_LBRC, KC_RBRC, KC_PERC,                   KC_HASH, KC_LCBR, KC_RCBR, KC_COLN, KC_BSLS, _______,
                                                  KC_SPC , _______, _______, _______
   ),
