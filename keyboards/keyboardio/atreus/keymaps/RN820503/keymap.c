@@ -67,7 +67,7 @@ enum custom_keycodes {
 #define LB00 KC_GRV
 
 #define RB00 KC_BSLS
-#define RB0 KC_SCLN
+#define RB0 LT(0, KC_1)
 #define RB1 KC_U
 #define RB2 KC_O
 #define RB3 KC_Y
@@ -100,7 +100,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	/*  Hands Down Promethium
     v   w   g2   m   j           =   .   '2   -   /
     s⌃  n⌥  t3   h⌘  k           ,   a⌘  e1   i⌥  c⌃
-    f   p   d    l   x	 `   \	 ;   u   o    y   b
+    f   p   d    l   x	 `   \	 ()  u   o    y   b
     ←   →  app   ⇥   r⇧  ⌫   ⏎   ␣⇧  ⎋  num   ↑   ↓
     */
 
@@ -233,24 +233,40 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 select_word_unregister();
             }
             break;
+
+        case RB0:  //  ( on tap, ) on long press.
+            if (record->tap.count > 0) {    // Key is being tapped.
+                if (record->event.pressed) {
+                    register_code16(KC_LPRN);
+                } else {
+                    unregister_code16(KC_LPRN);
+                }
+            } else {                        // Key is being held.
+                if (record->event.pressed) {
+                    register_code16(KC_RPRN);
+                } else {
+                    unregister_code16(KC_RPRN);
+                }
+            }
+            return false;  // Skip default handling.
     }
     return true;
 };
 
 // Key overrides
-/* const key_override_t eql_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_EQL, KC_UNDS);
 const key_override_t dot_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_DOT, KC_COLN);
-const key_override_t mins_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_MINS, KC_PLUS);
 const key_override_t comm_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_COMM, KC_SCLN);
-const key_override_t bsls_key_override = ko_make_basic(MOD_MASK_ALT, KC_SLSH, KC_BSLS);
-const key_override_t bspc_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_BSPC, KC_DEL); */
+// const key_override_t eql_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_EQL, KC_UNDS);
+// const key_override_t mins_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_MINS, KC_PLUS);
+// const key_override_t bsls_key_override = ko_make_basic(MOD_MASK_ALT, KC_SLSH, KC_BSLS);
+// const key_override_t bspc_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_BSPC, KC_DEL);
 
 // This globally defines all key overrides to be used
-/* const key_override_t *key_overrides[] = {
-    &eql_key_override,
+const key_override_t *key_overrides[] = {
     &dot_key_override,
-    &mins_key_override,
     &comm_key_override,
-    &bsls_key_override,
-    &bspc_key_override,
-}; */
+    // &eql_key_override,
+    // &mins_key_override,
+    // &bsls_key_override,
+    // &bspc_key_override,
+};

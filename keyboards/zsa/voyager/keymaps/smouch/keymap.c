@@ -25,7 +25,7 @@ enum custom_keycodes {
     ⎋   3   2   1    0   4           7   6   5   9   8  vol↑
     ⇥   v   w   g2   m   j           =   .   '2  -   /  vol↓
     z   s⌃  n⌥  t3   h⌘  k           ,   a⌘  e1  i⌥  c⌃ q
-    `   f   p   d    l   x      	 ;   u   o   y   b  \
+    `   f   p   d    l   x      	 ()  u   o   y   b  \
                          r⇧  ⌫   ⏎   ␣⇧
 */
 
@@ -82,7 +82,7 @@ enum custom_keycodes {
 #define LB1 KC_L
 #define LB0 KC_X
 
-#define RB0 KC_SCLN
+#define RB0 LT(0, KC_1)
 #define RB1 KC_U
 #define RB2 KC_O
 #define RB3 KC_Y
@@ -263,6 +263,22 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 select_word_unregister();
             }
             break;
+
+        case RB0:  //  ( on tap, ) on long press.
+            if (record->tap.count > 0) {    // Key is being tapped.
+                if (record->event.pressed) {
+                    register_code16(KC_LPRN);
+                } else {
+                    unregister_code16(KC_LPRN);
+                }
+            } else {                        // Key is being held.
+                if (record->event.pressed) {
+                    register_code16(KC_RPRN);
+                } else {
+                    unregister_code16(KC_RPRN);
+                }
+            }
+            return false;  // Skip default handling.
     }
     return true;
 };
