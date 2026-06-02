@@ -136,32 +136,33 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                     KC_LSFT, _______, C(KC_LEFT), C(KC_RGHT)
   ),
 
- /*	BEAKL-19 Numpad
-		⇥	+	=	*
+ /*	BEAKL-27 Numpad
+		⇥	+	/	*   =
     ⇥   -   5   2   3   :
     lk  7   .   1   0   4       	,   ⌘  (mo)  ⌥	 ⌃
-        /   6   9   8   ,
+        ,   6   9   8   ⏎
     	                ␣   ⌫   ⏎
   */
   [NUM] = LAYOUT_voyager(
-    _______, KC_TAB,  KC_PLUS, KC_EQL, KC_ASTR,  ___x___,                   _______, _______, _______, _______, _______, _______,
+    _______, KC_TAB,  KC_PLUS, KC_SLSH, KC_ASTR, KC_EQL,                    _______, _______, _______, _______, _______, _______,
     _______, KC_MINS, KC_5,    KC_2,    KC_3,    KC_COLN,                   _______, _______, _______, _______, _______, _______,
     QK_LLCK, KC_7,    KC_DOT,  KC_1,    KC_0,    KC_4,                      _______, KC_RGUI, _______, KC_RALT, KC_RCTL, _______,
-    _______, KC_SLSH, KC_6,    KC_9,    KC_8,    KC_COMM,                   _______, ___x___, ___x___, ___x___, ___x___, _______,
+    _______, KC_COMM, KC_6,    KC_9,    KC_8,    KC_ENT,                    _______, ___x___, ___x___, ___x___, ___x___, _______,
                                                  KC_SPC,  _______, _______, _______
   ),
 
-  /* Getreuer Symbols
-    *	`	<   >	-	|		    @  	.   '   $   ^
-    *   !   *   /   =   &          	,   (   )   ;   "
-    *   ~   +   [	]   %		    # 	{   }   :	\
+  /* BEAKL-19 Symbols
+    *       @   $   #                       ^
+    *       <   =   >                   [   _   ]
+    *   !   (   -   )   +          	%   {   ;   }   \
+    *       *   :	/       		 	&   ~   |
   */
-  [SYM] = LAYOUT_voyager(
-    _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______,
-    _______, KC_GRV , KC_LABK, KC_RABK, KC_MINS, KC_PIPE,                   KC_AT  , KC_DOT , KC_QUOT, KC_DLR , KC_CIRC, _______,
-    QK_LLCK, KC_EXLM, KC_ASTR, KC_SLSH, KC_EQL,  KC_AMPR,                   KC_COMM, KC_LPRN, KC_RPRN, KC_SCLN, KC_DQUO, QK_LLCK,
-    _______, KC_TILD, KC_PLUS, KC_LBRC, KC_RBRC, KC_PERC,                   KC_HASH, KC_LCBR, KC_RCBR, KC_COLN, KC_BSLS, _______,
-                                                 KC_SPC , _______, _______, _______
+  [_SYM] = LAYOUT_voyager(
+    _______, _______, KC_AT,   KC_DLR,  KC_HASH, _______,                   _______, _______, KC_CIRC, _______, _______, _______,
+    _______, ___x___, KC_LABK, KC_EQL,  KC_RABK, ___x___,                   ___x___, KC_LBRC, KC_UNDS, KC_RBRC, ___x___, _______,
+    QK_LLCK, KC_EXLM, KC_LPRN, KC_MINS, KC_RPRN, KC_PLUS,                   KC_PERC, KC_LCBR, KC_SCLN, KC_RCBR, KC_BSLS, QK_LLCK,
+    _______, ___x___, KC_ASTR, KC_COLN, KC_SLSH, ___x___,                   ___X___, KC_AMPR, KC_TILD, KC_PIPE, ___x___, _______,
+                                                 KC_SPC,  _______, _______, _______
   ),
 
   /*	Game
