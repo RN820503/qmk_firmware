@@ -151,18 +151,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                  KC_SPC,  _______, _______, _______
   ),
 
-  /* BEAKL-19 Symbols
-    *       @   $   #                       ^
-    *       <   =   >                   [   _   ]
-    *   !   (   -   )   +          	%   {   ;   }   \
-    *       *   :	/       		 	&   ~   |
+  /* Getreuer Symbols
+    *
+    *	`	<   >	-	|		    @  	.   '   $
+    *   !   *   /   =   &          	,   (   )   ;   "
+    *   ~   +   [	]   %		    # 	{   }   :	^
   */
   [_SYM] = LAYOUT_voyager(
-    _______, _______, KC_AT,   KC_DLR,  KC_HASH, _______,                   _______, _______, KC_CIRC, _______, _______, _______,
-    _______, ___x___, KC_LABK, KC_EQL,  KC_RABK, ___x___,                   ___x___, KC_LBRC, KC_UNDS, KC_RBRC, ___x___, _______,
-    QK_LLCK, KC_EXLM, KC_LPRN, KC_MINS, KC_RPRN, KC_PLUS,                   KC_PERC, KC_LCBR, KC_SCLN, KC_RCBR, KC_BSLS, QK_LLCK,
-    _______, ___x___, KC_ASTR, KC_COLN, KC_SLSH, ___x___,                   ___X___, KC_AMPR, KC_TILD, KC_PIPE, ___x___, _______,
-                                                 KC_SPC,  _______, _______, _______
+    _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______,
+    _______, KC_GRV , KC_LABK, KC_RABK, KC_MINS, KC_PIPE,                   KC_AT  , KC_DOT , KC_QUOT, KC_DLR , ___x___, _______,
+    QK_LLCK, KC_EXLM, KC_ASTR, KC_SLSH, KC_EQL , KC_AMPR,                   KC_COMM, KC_LPRN, KC_RPRN, KC_SCLN, KC_DQUO, QK_LLCK,
+    _______, KC_TILD, KC_PLUS, KC_LBRC, KC_RBRC, KC_PERC,                   KC_HASH, KC_LCBR, KC_RCBR, KC_COLN, KC_CIRC, _______,
+                                                 KC_SPC , _______, _______, _______
   ),
 
   /*	Game

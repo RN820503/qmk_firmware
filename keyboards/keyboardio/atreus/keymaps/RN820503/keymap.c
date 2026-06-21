@@ -137,16 +137,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, KC_PLUS, KC_EQL,  KC_ASTR, KC_SPC,  _______, _______, _______, _______, _______, _______, _______
     ),
 
-    /* BEAKL-27 Symbols
-    *	 	<   =	>	$		    @  	[   _   ]
-    *   !   (   -   )   +          	%   {   ;   }   \
-    *       *   :	/   #           ^ 	&   ~   |
-    *                   ␣
+    /* Getreuer Symbols
+    *	`	<   >	-	|		    @  	.   '   $   ^
+    *   !   *   /   =   &          	,   (   )   ;   "
+    *   ~   +   [	]   %           # 	{   }   :	\
     */
     [_SYM] = LAYOUT(
-    ___x___, KC_LABK, KC_EQL,  KC_RABK, KC_DLR,                    KC_AT,   KC_LBRC, KC_UNDS, KC_RBRC, ___x___,
-    KC_EXLM, KC_LPRN, KC_MINS, KC_RPRN, KC_PLUS,                   KC_PERC, KC_LCBR, KC_SCLN, KC_RCBR, KC_BSLS,
-	___x___, KC_ASTR, KC_COLN, KC_SLSH, KC_HASH, _______, _______, KC_CIRC, KC_AMPR, KC_TILD, KC_PIPE, ___x___,
+    KC_GRV,  KC_LABK, KC_RABK, KC_MINS, KC_PIPE,                   KC_AT,   KC_DOT,  KC_QUOT, KC_DLR,  KC_CIRC,
+    KC_EXLM, KC_ASTR, KC_SLSH, KC_EQL,  KC_AMPR,                   KC_COMM, KC_LPRN, KC_RPRN, KC_SCLN, KC_DQT,
+	KC_TILD, KC_PLUS, KC_LBRC, KC_RBRC, KC_PERC, _______, _______, KC_HASH, KC_LCBR, KC_RCBR, KC_COLN, KC_BSLS,
     _______, _______, _______, _______, KC_SPC,  _______, _______, _______, _______, _______, _______, _______
     ),
 
