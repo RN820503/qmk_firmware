@@ -125,16 +125,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     /*  BEAKL-19 Numpad
-    	-   5   2   3   :
-    	7   .   1   0   4           ⌘   mo   ⌥	⌃
-    	/   6   9   8   ,
-    	    +   =   *   ␣   ⌫
+    	-   7   4   3   :
+    	/   2   1   0   ␣           ⌘   mo   ⌥	⌃
+    	,   8   6   5   ⏎
+    	    +   =   *   .   9
     */
     [_NUM] = LAYOUT(
-    KC_MINS, KC_5,    KC_2,    KC_3,    KC_COLN,                   _______, _______, _______, _______, _______,
-    KC_7,    KC_DOT,  KC_1,    KC_0,    KC_4,                      _______, KC_RGUI, _______, KC_RALT, KC_RCTL,
-    KC_SLSH, KC_6,    KC_9,    KC_8,    KC_COMM, _______, _______, _______, _______, _______, _______, _______,
-    _______, KC_PLUS, KC_EQL,  KC_ASTR, KC_SPC,  _______, _______, _______, _______, _______, _______, _______
+    KC_MINS, KC_7,    KC_4,    KC_3,    KC_COLN,                   _______, _______, _______, _______, _______,
+    KC_SLSH, KC_2,    KC_1,    KC_0,    KC_SPC,                    _______, KC_RGUI, _______, KC_RALT, KC_RCTL,
+    KC_COMM, KC_8,    KC_6,    KC_5,    KC_ENT,  _______, _______, _______, _______, _______, _______, _______,
+    _______, KC_PLUS, KC_EQL,  KC_ASTR, KC_DOT,  KC_9,    _______, _______, _______, _______, _______, _______
     ),
 
     /* Getreuer Symbols
