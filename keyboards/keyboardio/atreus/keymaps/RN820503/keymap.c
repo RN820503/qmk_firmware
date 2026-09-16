@@ -114,13 +114,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* Navigation
                                Sclp                       pg↑   home   up	end
     	⌃       ⌥       (mo)   ⌘             		      pg↓   left   dn	rght    ⌦
-    	                       Scap                       ⌃`    ←Sel  Sel→  line
+    	                       Scap                       ⌃`    ⌫
                                                           dsk-  dsk+
     */
     [_NAV] = LAYOUT(
     ___x___, ___x___, _______, LCSG(KC_4), ___x___,                   KC_PGUP,    G(KC_LEFT), KC_UP,   G(KC_RGHT), ___x___,
     KC_LCTL, KC_LALT, _______, KC_LGUI,    ___x___,                   KC_PGDN,    KC_LEFT,    KC_DOWN, KC_RGHT,    KC_DEL,
-    ___x___, ___x___, ___x___, LSG(KC_4),  ___x___, KC_VOLD, KC_VOLU, C(KC_GRV),  SELWBAK,    SELWORD, SELLINE,    ___x___,
+    ___x___, ___x___, ___x___, LSG(KC_4),  ___x___, KC_VOLD, KC_VOLU, C(KC_GRV),  KC_BSPC,    ___x___, ___x___,    ___x___,
     _______, _______, _______, _______,    _______, _______, _______, C(KC_LEFT), C(KC_RGHT), _______, _______,    _______
     ),
 
@@ -137,16 +137,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, KC_PLUS, KC_SLSH, KC_ASTR, KC_SPC,  _______, _______, _______, _______, _______, _______, _______
     ),
 
-    /* Getreuer Symbols
-    *	`	<   >	-	|		    @  	.   '   $   ^
-    *   !   *   /   =   &          	,   (   )   ;   "
-    *   ~   +   [	]   %           # 	{   }   :	\
+    /* BEAKL-27 Symbols
+    *		<   =	>			      	[   _   ]
+    *   \   (   -   )   +          	%   {   ;   }   !
+    *       *   :	/               	|   ~   &
+    *       @   $   #                       ^
     */
     [_SYM] = LAYOUT(
-    KC_GRV,  KC_LABK, KC_RABK, KC_MINS, KC_PIPE,                   KC_AT,   KC_DOT,  KC_QUOT, KC_DLR,  KC_CIRC,
-    KC_EXLM, KC_ASTR, KC_SLSH, KC_EQL,  KC_AMPR,                   KC_COMM, KC_LPRN, KC_RPRN, KC_SCLN, KC_DQT,
-	KC_TILD, KC_PLUS, KC_LBRC, KC_RBRC, KC_PERC, _______, _______, KC_HASH, KC_LCBR, KC_RCBR, KC_COLN, KC_BSLS,
-    _______, _______, _______, _______, KC_SPC,  _______, _______, _______, _______, _______, _______, _______
+    _______, KC_LABK, KC_EQL,  KC_RABK, _______,                   _______, KC_LBRC, KC_UNDS, KC_RBRC, _______,
+    KC_BSLS, KC_LPRN, KC_MINS, KC_RPRN, KC_PLUS,                   KC_PERC, KC_LCBR, KC_SCLN, KC_RCBR, KC_EXLM,
+	_______, KC_ASTR, KC_COLN, KC_SLSH, _______, _______, _______, _______, KC_PIPE, KC_TILD, KC_AMPR, _______,
+    _______, KC_AT,   KC_DLR,  KC_HASH, KC_SPC,  _______, _______, _______, _______, KC_CIRC, _______, _______
     ),
 
 };
@@ -208,30 +209,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 return false; // handled it
             }
             return true;  // Didn't handle this
-            break;
-
-            case SELWBAK:  // Backward word selection.
-            if (record->event.pressed) {
-                select_word_register('B');
-            } else {
-                select_word_unregister();
-            }
-            break;
-
-        case SELWORD:  // Forward word selection.
-            if (record->event.pressed) {
-                select_word_register('W');
-            } else {
-                select_word_unregister();
-            }
-            break;
-
-        case SELLINE:  // Line selection.
-            if(record->event.pressed) {
-                select_word_register('L');
-            } else {
-                select_word_unregister();
-            }
             break;
     }
     return true;
